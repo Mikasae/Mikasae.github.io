@@ -12,7 +12,7 @@
     
     
     
-    <title>配置 多个GitHub账号 | Mikasa</title>
+    <title>Hello World | Mikasa</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -184,13 +184,13 @@
         <i class="fa fa-home"></i>
         <a href="http://example.com">Mikasa</a>
         >
-        <span>配置 多个GitHub账号</span>
+        <span>Hello World</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/">配置 多个GitHub账号</a>
+                <a href="/2021/05/08/01hello-world/">Hello World</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -210,7 +210,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/">配置 多个GitHub账号</a>
+                    <a href="/2021/05/08/01hello-world/">Hello World</a>
                 </h4>
             </div>
             <p>
@@ -225,143 +225,26 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="一台电脑-配置多个GitHub账号"><a href="#一台电脑-配置多个GitHub账号" class="headerlink" title="一台电脑 配置多个GitHub账号"></a>一台电脑 配置多个GitHub账号</h1><blockquote>
-<p>假设配置的两个GitHub账号分别为remmeiko和Mikasa</p>
-<p>操作环境：Windows</p>
+        <blockquote>
+<p>这篇文章我会一直续写下去的，心事，感悟都可以，毕竟一辈子很短，我还想去看看更多有趣的事，去见更多有趣的人。</p>
+<p>Hello world，世界，你好，往后余生，还请多担待。</p>
 </blockquote>
-<h2 id="0x01-生成密钥"><a href="#0x01-生成密钥" class="headerlink" title="0x01.生成密钥"></a>0x01.生成密钥</h2><blockquote>
-<p>每一个GitHub账号可以有多个ssh key,但是一个ssh key只能用于一个GitHub账号，所以需要为每个GitHub账号生成对应的ssh key</p>
-</blockquote>
-<h3 id="1-生成第一个账号rem的密钥"><a href="#1-生成第一个账号rem的密钥" class="headerlink" title="1.生成第一个账号rem的密钥"></a>1.生成第一个账号rem的密钥</h3><pre class=" language-shell"><code class="language-shell">ssh-keygen -t rsa -C “邮箱1”
-</code></pre>
-<blockquote>
-<p>此处虽然没有加-f参数，但执行时自动选择路径并命名(会向你确认一下路径)</p>
-</blockquote>
-<ul>
-<li>执行完后会在【C:\Users\用户\ .ssh】路径生成id_rsa(密钥)和id_rsa.pub(公钥)两个文件</li>
-</ul>
-<h3 id="2-生成第二个账号rem2的密钥"><a href="#2-生成第二个账号rem2的密钥" class="headerlink" title="2.生成第二个账号rem2的密钥"></a>2.生成第二个账号rem2的密钥</h3><blockquote>
-<p>第二个账号一定要重新命名，不然会覆盖掉第一个账号生成的密钥文件，使用-f参数指定文件名字</p>
-</blockquote>
-<pre class=" language-shell"><code class="language-shell">ssh-keygen -t rsa -f "C:\Users\用户\.ssh/rsa_2" -C “邮箱2”
-</code></pre>
-<ul>
-<li>执行完会生成id_rsa_2(密钥)和id_rsa_2.pub(公钥)两个文件</li>
-</ul>
-<blockquote>
-<p>ssh-keygen命令参数说明</p>
-<ul>
-<li>-t(type):指定要生成的密钥类型，有rsa1(SSH1),dsa(SSH2),ecdsa(SSH2),rsa(SSH2)等类型，较为常用的是rsa类型</li>
-<li>-C comment：提供一个新的注释</li>
-<li>-b bits：指定要生成的密钥长度 (单位:bit)，对于RSA类型的密钥，最小长度768bits,默认长度为2048bits。DSA密钥必须是1024bits</li>
-<li>-f filename:指定生成的密钥文件名字</li>
-</ul>
-</blockquote>
-<h2 id="0x02-将密钥添加至对应的GitHub账号"><a href="#0x02-将密钥添加至对应的GitHub账号" class="headerlink" title="0x02 将密钥添加至对应的GitHub账号"></a>0x02 将密钥添加至对应的GitHub账号</h2><ul>
-<li><p>登录GitHub账号，找到在头像下方setting</p>
+<h2 id="0x01-前情说明"><a href="#0x01-前情说明" class="headerlink" title="0x01 前情说明"></a>0x01 前情说明</h2><ul>
+<li><p>创建此博客的初衷在于每天记录一点新东西，督促自己每天都要进步</p>
 </li>
-<li><p>其他如下图操作即可(从左至右)</p>
-<p><img src="http://img-mikasa.test.upcdn.net//git/image-20210506215919195.png" alt="GitHub添加密钥"></p>
+<li><p>当累计到合适的时候，我会将其进行汇总归纳发布到我的另一个<a target="_blank" rel="noopener" href="https://remmeiko.buzz/">博客网站</a></p>
+</li>
+<li><p>看到学相伴阿超大佬每天都会发布一篇博客，并且能够保持健康规律的生活，希望能够向他学习</p>
 </li>
 </ul>
-<h2 id="0x03-编辑配置文件"><a href="#0x03-编辑配置文件" class="headerlink" title="0x03 编辑配置文件"></a>0x03 编辑配置文件</h2><ul>
-<li>先确认.ssh文件夹中是否存在config文件，没有则创建一个(无文件后缀)</li>
-<li>编辑如下内容</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell"># Host:主机别名
-# HostName:github服务器地址
-# User:GitHub服务器用户名
-# IdentityFile:和GitHub服务器通信的ssh私钥
-# 通过IdentityFile可以区分不同的账号
-
-# 账号1的邮箱
-Host github_remmeiko
-    HostName github.com
-    User git
-    IdentityFile C:/Users/用户名/.ssh/id_rsa
-
-# 账号2的邮箱
-Host github_Mikasa  # 前缀名可以任意设置
-    HostName github.com
-    User git
-    IdentityFile C:/Users/用户名/.ssh/id_rsa_2
-</code></pre>
-<blockquote>
-<p>Host修改自己能够识别的名称即可</p>
-<p>HostName设置为github.com和ssd.github.com都可以</p>
-<p>IdentityFile为密钥所在的路径(注意寻找自己密钥所在的路径)</p>
-<p>ps:如果实在找不到密钥所在路径，推荐下载everything软件查找</p>
-<p><img src="http://img-mikasa.test.upcdn.net//git/image-20210507181236264.png" alt="Everything软件示例图"></p>
-</blockquote>
-<ul>
-<li><p>上述操作成功之后就可以测试是否配置成功了</p>
-<ul>
-<li>终端输入以下命令</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell">ssh -T git@github_remmeiko
-ssh -T git@github_Mikasa
-</code></pre>
-<ul>
-<li>显示以下内容则表示配置成功了</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell">Hi rem! You've successfully authenticated, but GitHub does not provide shell access.
-</code></pre>
+<h2 id="0x02-我现阶段的小理想"><a href="#0x02-我现阶段的小理想" class="headerlink" title="0x02 我现阶段的小理想"></a>0x02 我现阶段的小理想</h2><ul>
+<li><p>现在的我希望能够找到一份满意的工作，生活能够不慌不忙不卑不吭，工作不一定要钱多，不一定要事少，只要我内心觉得满意就行(很抽象)。</p>
+</li>
+<li><p>具体描述的话，emmm……我想一想，写字楼？与周围人好好相处？平均水平的工资？对了，一定要有上升空间和进取的态度。</p>
+</li>
+<li><p>如果什么时候我开始真正的佛系，或许不是我看开了，而是我这一辈子已经能够看到彼岸，那时候每天可能就在流水线也说不定，若果真如此那人生真就已经一眼望穿了。（呸呸呸，想啥呢？扯远了扯远了，这样一辈子太无聊了）</p>
 </li>
 </ul>
-<h2 id="0x04-使用ssh-agent管理密钥"><a href="#0x04-使用ssh-agent管理密钥" class="headerlink" title="0x04 使用ssh-agent管理密钥"></a>0x04 使用ssh-agent管理密钥</h2><pre class=" language-shell"><code class="language-shell">ssh-add id_rsa
-ssh-add id_rsa_2 
-# 后面是生成的密钥
-</code></pre>
-<h2 id="0x05-配置仓库设置"><a href="#0x05-配置仓库设置" class="headerlink" title="0x05 配置仓库设置"></a>0x05 配置仓库设置</h2><h3 id="1-删除全局配置"><a href="#1-删除全局配置" class="headerlink" title="1.删除全局配置"></a>1.删除全局配置</h3><pre class=" language-shell"><code class="language-shell">git config --global --unset 'user.name'
-git config --global --unset 'user.email'
-</code></pre>
-<h3 id="2-设置本地配置"><a href="#2-设置本地配置" class="headerlink" title="2.设置本地配置"></a>2.设置本地配置</h3><pre class=" language-shell"><code class="language-shell">git config user.name `用户名`
-git config user.email `邮箱@163.com`
-</code></pre>
-<h2 id="0x06-本地仓库关联远程仓库"><a href="#0x06-本地仓库关联远程仓库" class="headerlink" title="0x06 本地仓库关联远程仓库"></a>0x06 本地仓库关联远程仓库</h2><pre class=" language-shell"><code class="language-shell"># 记住要到对应的本地仓库路径下执行对应的命令
-git remote add origin git@github_remmeiko:xxx/xxx.git
-git remote add origin git@github_Mikasa:xxx.xxx.git
-</code></pre>
-<blockquote>
-<p>　命令中后半段xxx/xxx.git就是下图中2标注的信息</p>
-</blockquote>
-<p><img src="http://img-mikasa.test.upcdn.net//git/image-20210507175641145.png"></p>
-<h2 id="0x07-补充说明"><a href="#0x07-补充说明" class="headerlink" title="0x07 补充说明"></a>0x07 补充说明</h2><ul>
-<li><p>关于账号和邮箱的说明</p>
-<ul>
-<li>我们一般接触的有两个地方的账号和邮箱，一个是git设置的账号邮箱，一个是GitHub账号对应的账号和邮箱</li>
-<li>1）本地git设置账号和邮箱分为系统，全局和本地(local)，全局和系统是不随git库改变的，但是也可以为每个仓库设置单独的账号和邮箱。这个账号和邮箱不是作为验证信息，是作为commit提交记录相关信息的标识。</li>
-</ul>
-<blockquote>
-<p>系统配置是对这台电脑所有用户生效的</p>
-<p>全局配置是对该用户登录下的所有GitHub仓库生效的</p>
-<p>本地(local)配置：也就是为单独仓库进行的配置，只对该仓库生效</p>
-<p>优先级逐渐增加，譬如全局配置的优先级要低于仓库配置，就是说如果仓库和全局都设置了账号和邮箱，那么实际生效是仓库配置设置的账号和邮箱。</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img-mikasa.test.upcdn.net//git/image-20210507233902733.png" alt="git配置"></p>
-</blockquote>
-<ul>
-<li>2）每个GitHub账号在注册时都会有一个对应的账号和邮箱，这个是GitHub的基本信息，说标识也可以，如下图</li>
-</ul>
-<blockquote>
-<p><img src="http://img-mikasa.test.upcdn.net//git/image-20210507234533695.png" alt="GitHub账号配置"></p>
-</blockquote>
-<blockquote>
-<p>前提说明：git设置的账号和邮箱下文将使用user.name和user.email代替</p>
-</blockquote>
-<ul>
-<li>在本地git设置的user.name和uer.email作为commit记录时的一个标识，用来方便管理，可以清楚的知道是谁提交的。</li>
-<li>当你的user.name和user.email和GitHub账号上的name\email一致，你提交修改时，github会自动将这两者关联起来，因此建议git设置的账号邮箱和GitHub账号邮箱一致，（随意填写也是可以的，但如果当两处的账号和邮箱不一致时，就无法进行统计，且头像变灰，而且你也可以改成其他人的账号和邮箱，记录就会显示是别人提交的)</li>
-</ul>
-<blockquote>
-<p><img src="http://img-mikasa.test.upcdn.net//git/image-20210508003939061.png" alt="是否关联"></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liujiakunit/article/details/45849095">关于ssh-keygen命令的介绍与用法</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.shenxt.info/post/2020-03-11-multi-github-in-one-pc/">如何在一台电脑上设置多个github账号</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f3020c04d966">对Git用户名与Github账户关系的理解</a></p>
 
     </div>
 </article>
@@ -497,17 +380,17 @@ git remote add origin git@github_Mikasa:xxx.xxx.git
 
                 
                 <li>
-                    <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2021/05/08/01hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2021/05/08/01hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2021/05/08/01hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>

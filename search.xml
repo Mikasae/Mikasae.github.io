@@ -4,9 +4,22 @@
   
     
     <entry>
+      <title>Git使用</title>
+      <link href="2021/05/09/03Git%E4%BD%BF%E7%94%A8/"/>
+      <url>2021/05/09/03Git%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Git使用"><a href="#Git使用" class="headerlink" title="Git使用"></a>Git使用</h1><h2 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h2><ul><li>项目目录下初始化本地仓库(Git代码库)</li></ul><pre class=" language-shell"><code class="language-shell">git init</code></pre><ul><li>添加文件到暂存区</li></ul><pre class=" language-shell"><code class="language-shell"># 添加指定文件到暂存区git add 文件1 文件2 文件3...# 添加指定目录到暂存区，包括子目录git add [dir]# 添加当前目录所有文件到暂存区git add .</code></pre><ul><li>将暂存区文件添加到本地仓库</li></ul><pre class=" language-shell"><code class="language-shell">git commit -m "备注信息"</code></pre><ul><li><p>远程同步</p><ul><li>remote</li></ul><pre class=" language-shell"><code class="language-shell"># 显示所有远程仓库（-v参数会显示详细信息）git remote -v # 添加一个新的远程仓库，并指定一个方便使用的简写代替# 仓库url:git@github_remmeiko:xxx/xxx.git# 简写shortname：可随便指定git remote add [shortname] [url]</code></pre><ul><li>push</li></ul><pre class=" language-shell"><code class="language-shell"># 将本地仓库的文件推送到远程分支# 如果远程仓库没有这个分支，会新建一个同名的远程分支# 如果省略远程分支名，则表示两者同名$ git push <远程主机名> <本地分支名>:<远程分支名>$ git push origin branchname# 如果省略本地分支名，则表示删除指定的远程分支# 因为这等同于推送一个空的本地分支到远程分支。$ git push origin :master# 等同于$ git push origin --delete master# 建立当前分支和远程分支的追踪关系$ git push -u origin master# 如果当前分支与远程分支之间存在追踪关系# 则可以省略分支和 -u$ git push# 不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机$ git push --all origin</code></pre><ul><li>pull</li></ul><pre class=" language-shell"><code class="language-shell"># 拉取所有远程分支到本地镜像仓库中$ git pull# 拉取并合并项目其他人员的一个分支$ git pull origin branchname</code></pre></li><li><p>查看信息</p></li></ul><pre class=" language-shell"><code class="language-shell"># 查看代码修改情况（工作区，暂存区，本地仓库）git status# 查看所有配置信息git config --list# 本地仓库用户名和邮箱git config user.namegit config user.email# 全局配置git config --global user.namegit config --global user.email</code></pre><ul><li>设置用户名和邮箱</li></ul><pre class=" language-shell"><code class="language-shell"># 本地仓库用户名和邮箱git config user.name "用户名"git config user.email "邮箱"# 全局配置git config --global user.name "用户名"git config --global user.email "邮箱"</code></pre><ul><li>删除用户名和邮箱</li></ul><pre class=" language-shell"><code class="language-shell"># 本地仓库用户名和邮箱git config --unset user.name "用户名"git config --unset user.email "邮箱"# 全局配置git config --global --unset user.name "用户名"git config --global --unset user.email "邮箱"</code></pre><ul><li>分支</li></ul><pre class=" language-shell"><code class="language-shell"># 列出所有本地分支git branch# 列出所有远程分支git branch -r# 列出所有本地分支和远程分支git branch -a# 创建一个本地分支，依然停留在本分支   [branch-name]:分支名字git branch [branch-name]# 切换分支git checkout [branch-name]M CrawierMaven/DownloadMaven/Frame.java # M是带过来上个分支的修改# 删除本地分支git branch -d [branch-name]# 删除远程分支git branch -r -d origin/[branch-name]</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
-      <link href="2021/05/08/hello-world/"/>
-      <url>2021/05/08/hello-world/</url>
+      <link href="2021/05/08/01hello-world/"/>
+      <url>2021/05/08/01hello-world/</url>
       
         <content type="html"><![CDATA[<blockquote><p>这篇文章我会一直续写下去的，心事，感悟都可以，毕竟一辈子很短，我还想去看看更多有趣的事，去见更多有趣的人。</p><p>Hello world，世界，你好，往后余生，还请多担待。</p></blockquote><h2 id="0x01-前情说明"><a href="#0x01-前情说明" class="headerlink" title="0x01 前情说明"></a>0x01 前情说明</h2><ul><li><p>创建此博客的初衷在于每天记录一点新东西，督促自己每天都要进步</p></li><li><p>当累计到合适的时候，我会将其进行汇总归纳发布到我的另一个<a href="https://remmeiko.buzz/">博客网站</a></p></li><li><p>看到学相伴阿超大佬每天都会发布一篇博客，并且能够保持健康规律的生活，希望能够向他学习</p></li></ul><h2 id="0x02-我现阶段的小理想"><a href="#0x02-我现阶段的小理想" class="headerlink" title="0x02 我现阶段的小理想"></a>0x02 我现阶段的小理想</h2><ul><li><p>现在的我希望能够找到一份满意的工作，生活能够不慌不忙不卑不吭，工作不一定要钱多，不一定要事少，只要我内心觉得满意就行(很抽象)。</p></li><li><p>具体描述的话，emmm……我想一想，写字楼？与周围人好好相处？平均水平的工资？对了，一定要有上升空间和进取的态度。</p></li><li><p>如果什么时候我开始真正的佛系，或许不是我看开了，而是我这一辈子已经能够看到彼岸，那时候每天可能就在流水线也说不定，若果真如此那人生真就已经一眼望穿了。（呸呸呸，想啥呢？扯远了扯远了，这样一辈子太无聊了）</p></li></ul>]]></content>
       
