@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>占用位置</title>
+      <link href="2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/"/>
+      <url>2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> npm </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>node编译工具node-gyp相关错误</title>
       <link href="2021/05/10/04npm-node%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
       <url>2021/05/10/04npm-node%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h1 id="node编译工具node-gyp相关错误"><a href="#node编译工具node-gyp相关错误" class="headerlink" title="node编译工具node-gyp相关错误"></a>node编译工具node-gyp相关错误</h1><h3 id="错误1：gyp-ERR-stack-Error-spawn-E-Software3-VisualStudio-IDE-MSBuild-15-0-Bin-MSBuild-exe-ENOENT"><a href="#错误1：gyp-ERR-stack-Error-spawn-E-Software3-VisualStudio-IDE-MSBuild-15-0-Bin-MSBuild-exe-ENOENT" class="headerlink" title="错误1：gyp ERR! stack Error: spawn E:\Software3\VisualStudio\IDE\MSBuild\15.0\Bin\MSBuild.exe ENOENT"></a>错误1：gyp ERR! stack Error: spawn E:\Software3\VisualStudio\IDE\MSBuild\15.0\Bin\MSBuild.exe ENOENT</h3><blockquote><p><img src="https://mikasae.github.io/Mikasa/boke/image-20210510101314896.png" alt="image-20210510101314896"></p></blockquote><ul><li>原因：这个问题应该是node-gyp找不到编译工具引发的(VisualStudio–&gt;可能是和C++编译工具有关)</li></ul><blockquote><p>node-gyp是一个编译工具，负责将源码形式的node modules编译成适应于本地环境的、编译好的node modules，其中的编译过程就需要依赖一些编译工具（环境），如c编译器和python环境</p></blockquote><ul><li><strong>解决</strong>：安装windows-build-tools构建工具即可(注意大小写)</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global --production windows-build-tools --vs2017</span><br></pre></td></tr></table></figure><blockquote><p><img src="https://mikasae.github.io/Mikasa/boke/image-20210510101929105.png" alt="image-20210510101929105"></p></blockquote><ul><li>问题解决可以参考</li></ul><blockquote><p><a href="https://github.com/nodejs/node-gyp/issues/1747">MSBuild.exe ENOENT-使用VS2019而不是VS2017 </a></p><p><a href="https://www.npmjs.com/package/windows-build-tools">安装windows-build-tools工具</a></p></blockquote><ul><li><p>其他</p><ul><li><p>这个问题是我在安装node-sass插件中出现的，node-sass的使用也是需要依赖具体编译环境的，因此如果没有构建工具或者编译环境有问题就会出现各种各样的错误</p></li><li><p>因此使用安装node-sass，建议先安装构建环境，如果使用过程中出现问题优先考虑是不是编译环境出问题了</p></li><li><p>node-gyp这个编译工具是依赖于多种编译环境的如python,c等</p></li></ul><blockquote><p>从安装sass的那一天起，我的npm工具不管输入什么命令，就开始疯狂报错，我还以为是我的环境出问题了，还在犹豫要不要重装。—-&gt;然后重点来了，在安装完这个构建工具后，我的npm工具好了。。。。好了。。。。。(tm)它好了,emmmmm，如下</p><p><img src="https://mikasae.github.io/Mikasa/boke/image-20210510103303381.png" alt="image-20210510103303381"></p><p>所以我估摸着就是sass需要依赖特定的编译环境，而我的电脑的编译环境有问题，node-gyp编译工具编译出错了，所以才会导致各种各样的问题</p></blockquote><blockquote><p>还有一点，这里只是简单的了解和解决问题，我有预感以后还会出现新的问题，那时候应该必须仔细了解node-gyp编译和编译环境才能解决。谁知道呢？</p></blockquote></li></ul><p>​    </p>]]></content>
+        <content type="html"><![CDATA[<h1 id="node编译工具node-gyp相关错误"><a href="#node编译工具node-gyp相关错误" class="headerlink" title="node编译工具node-gyp相关错误"></a>node编译工具node-gyp相关错误</h1><h3 id="错误1：gyp-ERR-stack-Error-spawn-E-Software3-VisualStudio-IDE-MSBuild-15-0-Bin-MSBuild-exe-ENOENT"><a href="#错误1：gyp-ERR-stack-Error-spawn-E-Software3-VisualStudio-IDE-MSBuild-15-0-Bin-MSBuild-exe-ENOENT" class="headerlink" title="错误1：gyp ERR! stack Error: spawn E:\Software3\VisualStudio\IDE\MSBuild\15.0\Bin\MSBuild.exe ENOENT"></a>错误1：gyp ERR! stack Error: spawn E:\Software3\VisualStudio\IDE\MSBuild\15.0\Bin\MSBuild.exe ENOENT</h3><blockquote><p><img src="https://mikasae.github.io/Mikasa/boke/image-20210510101314896.png" alt="image-20210510101314896"></p></blockquote><ul><li>原因：这个问题应该是node-gyp找不到编译工具引发的(VisualStudio–&gt;可能是和C++编译工具有关)</li></ul><blockquote><p>node-gyp是一个编译工具，负责将源码形式的node modules编译成适应于本地环境的、编译好的node modules，其中的编译过程就需要依赖一些编译工具（环境），如c编译器和python环境</p></blockquote><ul><li><strong>解决</strong>：安装windows-build-tools构建工具即可(注意大小写)</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global --production windows-build-tools --vs2017</span><br></pre></td></tr></table></figure><blockquote><p><img src="https://mikasae.github.io/Mikasa/boke/image-20210510101929105.png" alt="image-20210510101929105"></p></blockquote><ul><li>问题解决可以参考</li></ul><p><a href="https://github.com/nodejs/node-gyp/issues/1747">MSBuild.exe ENOENT-使用VS2019而不是VS2017 </a></p><p><a href="https://www.npmjs.com/package/windows-build-tools">安装windows-build-tools工具</a></p><ul><li><p>其他</p><ul><li><p>这个问题是我在安装node-sass插件中出现的，node-sass的使用也是需要依赖具体编译环境的，因此如果没有构建工具或者编译环境有问题就会出现各种各样的错误</p></li><li><p>因此使用安装node-sass，建议先安装构建环境，如果使用过程中出现问题优先考虑是不是编译环境出问题了</p></li><li><p>node-gyp这个编译工具是依赖于多种编译环境的如python,c等</p></li></ul><blockquote><p>从安装sass的那一天起，我的npm工具不管输入什么命令，就开始疯狂报错，我还以为是我的环境出问题了，还在犹豫要不要重装。—-&gt;然后重点来了，在安装完这个构建工具后，我的npm工具好了。。。。好了。。。。。(tm)它好了,emmmmm，如下</p><p><img src="https://mikasae.github.io/Mikasa/boke/image-20210510103303381.png" alt="image-20210510103303381"></p><p>所以我估摸着就是sass需要依赖特定的编译环境，而我的电脑的编译环境有问题，node-gyp编译工具编译出错了，所以才会导致各种各样的问题</p></blockquote><blockquote><p>还有一点，这里只是简单的了解和解决问题，我有预感以后还会出现新的问题，那时候应该必须仔细了解node-gyp编译和编译环境才能解决。谁知道呢？</p></blockquote></li></ul><p>​    </p>]]></content>
       
       
       <categories>
