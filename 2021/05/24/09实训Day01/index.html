@@ -12,7 +12,7 @@
     
     
     
-    <title>tags: Git 配置 | Mikasa</title>
+    <title>实训Day01 | Mikasa</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -226,19 +226,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://example.com">Mikasa</a>
         >
-        <span>标签sshis ss s</span>
+        <span>实训Day01</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/Git-%E9%85%8D%E7%BD%AE/index.html">Git 配置</a>
+                <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/">实训Day01</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Zigbee/">Zigbee</a>, 
+                
+                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-05-24
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -246,21 +267,138 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/index.html">Git 配置</a>
+                    <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/">实训Day01</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-05-24
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Zigbee/">Zigbee</a>, 
+                
+                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/">配置 多个GitHub账号</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <blockquote>
+<p>本周主要是学习关于Zigbee的自组网，今天是第一天，全程都是环境配置和简单的运行</p>
+</blockquote>
+<h2 id="0x01-什么是Zigbee"><a href="#0x01-什么是Zigbee" class="headerlink" title="0x01 什么是Zigbee"></a>0x01 什么是Zigbee</h2><ul>
+<li>Zigbee：近距离、低复杂的双信通信系统</li>
+<li>本质：无线设备之间得到通信方式</li>
+<li>用途：用于短距离、低功耗、传输效率低电子设备之间数据传输</li>
+<li>特点：低功耗、低成本、大容量、时延短、可靠性高、网络拓扑结构灵活</li>
+<li>缺点：通信速率比较小</li>
+<li>主要作用：构建无线局域网</li>
+<li>其他：Zigbee、Zigbee协议、Zigbee通信方式是一回事</li>
+<li>注意：Zigbee只是用来完成数据通信的工作，具体使用的功能系统取决于上位机计算机</li>
+</ul>
+<h2 id="0x02-无线通信方式对比"><a href="#0x02-无线通信方式对比" class="headerlink" title="0x02 无线通信方式对比"></a>0x02 无线通信方式对比</h2><ul>
+<li>蓝牙：功耗比较低(相对于Zigbee)，组建网络节点数少(7~8)</li>
+<li>WiFi：通信速率比较大，功耗大</li>
+<li>Zigbee：组建大规模网络，且功耗低，缺点：通信速率比较小</li>
+</ul>
+<h2 id="0x03-Zigbee环境安装"><a href="#0x03-Zigbee环境安装" class="headerlink" title="0x03 Zigbee环境安装"></a>0x03 Zigbee环境安装</h2><ol>
+<li>环境工具</li>
+</ol>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524182058679.png" alt="image-20210524182058679"></p>
+<ol start="2">
+<li><p>双击安装包后，先后出现下面左边的两个画面时，以<strong>管理员身份</strong>运行注册工具，记得<strong>关闭安全软件</strong></p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524182434523.png" alt="image-20210524182434523"></p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524182533660.png" alt="image-20210524182533660"></p>
+</li>
+<li><p>一直下一步即可</p>
+</li>
+</ol>
+<h2 id="0x04-IAR工程建立"><a href="#0x04-IAR工程建立" class="headerlink" title="0x04 IAR工程建立"></a>0x04 IAR工程建立</h2><ol>
+<li><p>先创建一个工作空间</p>
+<p>步骤：File–&gt;new–&gt;workspace</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524182703229.png" alt="image-20210524182703229"></p>
+</li>
+<li><p>创建一个工程</p>
+<p>Project–&gt;Create New Project–&gt;Empty project–&gt;0K–&gt;保存</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524182815959.png" alt="image-20210524182815959"></p>
+</li>
+<li><p>新建一个文件–&gt;保存为.c文件</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524182901492.png" alt="image-20210524182901492"></p>
+</li>
+</ol>
+<p>​    Crtl+s保存，后缀.c</p>
+<ol start="4">
+<li><p>将.c文件添加进工程</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524183025818.png" alt="image-20210524183025818"></p>
+</li>
+<li><p>保存工作空间</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524183113154.png" alt="image-20210524183113154"></p>
+<p>或者直接关闭时候选择保存</p>
+</li>
+<li><p><strong>编译和仿真</strong></p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524190237177.png" alt="image-20210524190237177"></p>
+</li>
+</ol>
+<h2 id="0x05-选项配置"><a href="#0x05-选项配置" class="headerlink" title="0x05 选项配置"></a>0x05 选项配置</h2><ul>
+<li><p>选择“工程名-Debug”–&gt;options</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524183306665.png" alt="image-20210524183306665"></p>
+</li>
+</ul>
+<ol>
+<li><p>General Options–&gt;Device 选择Texas Instruments–&gt;cc2530F256</p>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210524183511254.png" alt="image-20210524183511254"></p>
+</li>
+<li><p>)Linker–&gt;Output–&gt;Override default勾上</p>
+<p> Allow C-SPY-specific extra output file 勾上</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524183611570.png" alt="image-20210524183611570"></p>
+</li>
+<li><p>Debugger–&gt;Driver–&gt;选择Texas Instrments</p>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210524183703336.png" alt="image-20210524183703336"></p>
+</li>
+</ol>
+<blockquote>
+<p>这些选项设置不配置好，后续下载编译或调试时会出错</p>
+</blockquote>
+<ol start="4">
+<li>生成Hex文件的设置</li>
+</ol>
+<p>Linker–&gt;Extra Output–&gt;Genetare extra output file【勾上】–&gt;</p>
+<p> Override defualt【勾上】–&gt;命名为.hex文件</p>
+<p>  output format :intel-extended–&gt;OK</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524185648418.png" alt="image-20210524185648418"></p>
+<blockquote>
+<p><strong>再次编译后会在项目空间的Debuh/Exe目录下生成hex文件</strong>，烧录的时候往下面去找即可</p>
+</blockquote>
+<h2 id="0x06-驱动安装"><a href="#0x06-驱动安装" class="headerlink" title="0x06 驱动安装"></a>0x06 驱动安装</h2><blockquote>
+<p>别问，问就是上课在睡觉，没截图</p>
+</blockquote>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524190051022.png" alt="image-20210524190051022"></p>
+<h2 id="0x07-文件烧录"><a href="#0x07-文件烧录" class="headerlink" title="0x07 文件烧录"></a>0x07 文件烧录</h2><ul>
+<li>安装烧录软件SmartRFProgram</li>
+</ul>
+<blockquote>
+<p>双击一直下一步</p>
+</blockquote>
+<ul>
+<li>烧录</li>
+</ul>
+<blockquote>
+<p>烧录前需要重置仿真器，烧录出错须注意下仿真器是否重置，同时烧录的时候需要终止IAR Embedded的仿真</p>
+</blockquote>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210524184229969.png" alt="image-20210524184229969"></p>
+<h2 id="0x08-LED灯闪烁"><a href="#0x08-LED灯闪烁" class="headerlink" title="0x08 LED灯闪烁"></a>0x08 LED灯闪烁</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;iocc2530.h&quot;</span></span></span><br><span class="line"><span class="comment">// 点亮两盏LED灯</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> ms)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">while</span>(ms--) </span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="number">275</span>;i++);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">led_init</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  P1_0 = <span class="number">0</span>;</span><br><span class="line">  P1_1 = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  P1DIR |= <span class="number">0x03</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">    led_init();</span><br><span class="line">    delay_ms(<span class="number">500</span>);</span><br><span class="line">    P1_0 = <span class="number">1</span>;</span><br><span class="line">    P1_1 = <span class="number">1</span>;</span><br><span class="line">    delay_ms(<span class="number">500</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -463,17 +601,17 @@
 
                 
                 <li>
-                    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -481,29 +619,29 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 15.069377385530451px;" class="tag-cloud-link">杂谈</a>
+    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 15.678374054335494px;" class="tag-cloud-link">杂谈</a>
     
-    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 8.486398552103932px;" class="tag-cloud-link">碎碎念</a>
+    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 13.183155469449632px;" class="tag-cloud-link">碎碎念</a>
     
-    <a href="/tags/Git/" style="font-size: 12.388960459894749px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 9.676876924552257px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 14.00289083908302px;" class="tag-cloud-link">命令</a>
+    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 19.63052850935007px;" class="tag-cloud-link">命令</a>
     
-    <a href="/tags/npm/" style="font-size: 15.844439239979875px;" class="tag-cloud-link">npm</a>
+    <a href="/tags/npm/" style="font-size: 16.779094560052535px;" class="tag-cloud-link">npm</a>
     
-    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 9.362791386995013px;" class="tag-cloud-link">报错</a>
+    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 16.201146533397583px;" class="tag-cloud-link">报错</a>
     
-    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 15.99870357424841px;" class="tag-cloud-link">Git 配置</a>
+    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 17.988877896076986px;" class="tag-cloud-link">Git 配置</a>
     
-    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 13.691501342799672px;" class="tag-cloud-link">离散数学</a>
+    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 19.680018201977187px;" class="tag-cloud-link">离散数学</a>
     
-    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 9.47964496357649px;" class="tag-cloud-link">期末考试</a>
+    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 8.648443888210426px;" class="tag-cloud-link">期末考试</a>
     
-    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 14.865771229456177px;" class="tag-cloud-link">与我无关</a>
+    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 15.442044851707742px;" class="tag-cloud-link">与我无关</a>
     
-    <a href="/tags/Zigbee/" style="font-size: 13.226791216510211px;" class="tag-cloud-link">Zigbee</a>
+    <a href="/tags/Zigbee/" style="font-size: 9.636560481034024px;" class="tag-cloud-link">Zigbee</a>
     
-    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 17.543859308887985px;" class="tag-cloud-link">实训</a>
+    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 10.13033709682161px;" class="tag-cloud-link">实训</a>
     
 </div>
                 
