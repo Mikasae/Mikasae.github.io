@@ -12,7 +12,7 @@
     
     
     
-    <title>categories: Git | Mikasa</title>
+    <title>实训Day03 | Mikasa</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -226,19 +226,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-category">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://example.com">Mikasa</a>
         >
-        <span>目录</span>
+        <span>实训Day03</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/Git/index.html">Git</a>
+                <a href="/2021/05/26/11%E5%AE%9E%E8%AE%ADDay03/">实训Day03</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>, 
+                
+                <a href="/tags/Z-stack/">Z-stack</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-05-26
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -246,24 +267,196 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/Git/index.html">Git</a>
+                    <a href="/2021/05/26/11%E5%AE%9E%E8%AE%ADDay03/">实训Day03</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-05-26
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>, 
+                
+                <a href="/tags/Z-stack/">Z-stack</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/">Git使用</a>
-            <br>
-            
-            <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/">配置 多个GitHub账号</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <h2 id="0x01-Z-stack协议栈"><a href="#0x01-Z-stack协议栈" class="headerlink" title="0x01 Z-stack协议栈"></a>0x01 Z-stack协议栈</h2><h3 id="1-Z-stack协议栈是什么？"><a href="#1-Z-stack协议栈是什么？" class="headerlink" title="1.Z-stack协议栈是什么？"></a>1.Z-stack协议栈是什么？</h3><ul>
+<li><p>非人话：T1公司推出的ZigBee规范的商用协议</p>
+</li>
+<li><p>人话：为了使Zigbee的开发更加简单高效，实现各个功能的实例框架代码</p>
+<blockquote>
+<p>我的理解就是一个框架，我们想要实现自己的功能程序，只需要在协议栈的基础上修改或添加即可</p>
+</blockquote>
+</li>
+<li><p>由物理层、MAC层、网络层和应用层组成，由于Z-Stack协议栈是一个<strong>半开源</strong>的协议栈，MAC层和网络层的部分源代码是非开源的，因此我们学习的开源部分，主要包括<strong>main函数、APP层、ZDO层、NWK层和HAL层</strong>。</p>
+</li>
+</ul>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210527234143880.png" alt="image-20210527234143880"></p>
+<blockquote>
+<p>因为是框架，并不需要都使用到，只简单记录使用到的部分</p>
+</blockquote>
+<h3 id="2-协议栈具体内容"><a href="#2-协议栈具体内容" class="headerlink" title="2.协议栈具体内容"></a>2.协议栈具体内容</h3><h4 id="1）main函数"><a href="#1）main函数" class="headerlink" title="1）main函数"></a>1）main函数</h4><ul>
+<li><p>main函数具体做量两件事：系统初始化和调用函数Osal_start_system()来启动协议栈</p>
+</li>
+<li><p>协议栈的运行机制：Zmain.c中的main函数是整个协议栈的入口，其中包含了各种硬件的初始化和协议栈的初始化</p>
+</li>
+<li><p>直到调用osal_start_system()函数，协议栈开始真正运行</p>
+</li>
+</ul>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210527234849563.png" alt="image-20210527234849563"></p>
+<blockquote>
+<p>这些函数就是各种硬件的初始化和协议栈的初始化</p>
+</blockquote>
+<h4 id="2）osal-start-system-函数"><a href="#2）osal-start-system-函数" class="headerlink" title="2）osal_start_system()函数"></a>2）osal_start_system()函数</h4><ul>
+<li>调用后不再返回，意思就是运行这个函数后，这个函数后面的语句不会再执行</li>
+<li>函数里面存着for死循环，这也是为什么我们自定义的初始化函数需要放在osal_start_system之前，放在后面是不会被执行的</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">led_init();</span><br><span class="line">exit_init();</span><br><span class="line"><span class="comment">// 执行完上面的函数之后开始调用osal_start_system函数，协议栈正式运行</span></span><br><span class="line">osal_start_system(); <span class="comment">// No Return from here</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3）APP层分析"><a href="#3）APP层分析" class="headerlink" title="3）APP层分析"></a>3）APP层分析</h4><ul>
+<li><p>Z-Stack协议栈的APP层主要功能是实现用户定义的事件，</p>
+</li>
+<li><p>如果要编写应用程序，涉及三个文件，用户只需要添加这几个文件，编写自己的任务处理函数就可以了</p>
+<ul>
+<li><p>主文件–GenericApp.c：存放具体的任务事件处理函数，有两个功能</p>
+<ul>
+<li>对应用层用户定义的任务进行初始化</li>
+<li>调用事件处理函数GenericApp_ProcessEvent()</li>
+</ul>
+</li>
+<li><p>主文件的头文件—SampleApp.h</p>
+</li>
+<li><p>操作系统接口文件—OSAL_SampleApp.c：专门存放任务处理函数数组tasksArr[]的文件，实现Z-stack代码的公用</p>
+<blockquote>
+<p>目前为止整个实训只需要对GenericApp.c文件操</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4）任务和事件"><a href="#4）任务和事件" class="headerlink" title="4）任务和事件"></a>4）任务和事件</h4><ul>
+<li><p>在ZSTACK里按照代码功能来划分，分成不同的层:硬件层、网络层、应用层。每一个层都是一个任务</p>
+</li>
+<li><p>每个任务分配一个一个字节的唯一编号。然后每个任务要做很多事情，这个称为事件</p>
+</li>
+<li><p>Zigbee事件分为两类，系统定义事件和用户定义事件</p>
+<ul>
+<li>系统类事件是协议栈已定义好的</li>
+<li>用户类事件是我们用户层面(APP层)来定义的</li>
+</ul>
+</li>
+<li><p><strong>重点</strong>:事件类号采用一个16bit的常量,只有一个bit为1,其他全为0</p>
+<blockquote>
+<p>事件类号编码使用独热码编码，独热码是只有一个bit为1，其他全为0的一种码制，</p>
+</blockquote>
+<ul>
+<li>提取系统类事件：events &amp; SYS_EVENT_MSG</li>
+<li>清除系统类事件：events ^ SYS_EVENT_MSG</li>
+<li>由于事件类号是16bit，因此zigbee事件类只有16个，系统类事件SYS_EVENT_MSG使用0x8000，所以自行一事件类只有15个</li>
+</ul>
+</li>
+</ul>
+<h4 id="5）Generic-ProcessEvent-函数"><a href="#5）Generic-ProcessEvent-函数" class="headerlink" title="5）Generic_ProcessEvent()函数"></a>5）Generic_ProcessEvent()函数</h4><ul>
+<li><p>原型：UINT16  Generic_ProcessEvent( byte task_id, UINT16 events )</p>
+</li>
+<li><p><strong>事件处理函数</strong>，它会把events包含的事件进行处理</p>
+</li>
+<li><p>两个参数：task_id任务号和events事件类号</p>
+<blockquote>
+<p>事件处理函数首先根据事件类号来判断是何种类型事件，然后根据任务号得到消息指针pMsg，最后根据消息指针结构里的事件号pMsg-&gt;event来具体处理事件，event为8bit的常量，系统event在ZComDef.h里定义</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="6）osal-set-event-函数"><a href="#6）osal-set-event-函数" class="headerlink" title="6）osal_set_event()函数"></a>6）osal_set_event()函数</h4><ul>
+<li>uint8 osal_set_event(uint8 task_id,uint16 event_flag)<ul>
+<li>@task_id:任务编号,应用层为GenericApp_TaskID</li>
+<li>@event_flag:事件编号，就是在GenericApp.h中定义的宏</li>
+</ul>
+</li>
+</ul>
+<h4 id="7）osal-start-timerEx-函数"><a href="#7）osal-start-timerEx-函数" class="headerlink" title="7）osal_start_timerEx(函数)"></a>7）osal_start_timerEx(函数)</h4><ul>
+<li>uint8 osal_start_timerEx( uint taskID,uint16 event_flag,uint16 timeout_value);<ul>
+<li>@task_id:任务编号,应用层为GenericApp_TaskID</li>
+<li>@event_flag:事件编号，就是在GenericApp.h中定义的宏</li>
+<li>@timeout_value:延时时间，单位为ms</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意:该函数调用后会立马返回，这个延时功能是用定时器实现的。该函数调用多次不会多次添加事件，只是重新设置延时时间而已。</p>
+</blockquote>
+<h2 id="0x02-协议栈工程"><a href="#0x02-协议栈工程" class="headerlink" title="0x02 协议栈工程"></a>0x02 协议栈工程</h2><h4 id="1-协议栈模块添加"><a href="#1-协议栈模块添加" class="headerlink" title="1.协议栈模块添加"></a>1.协议栈模块添加</h4><p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210528001010246.png" alt="image-20210528001010246"></p>
+<ul>
+<li><p>使用时候只需要按照第二行展示的路径打开工作空间便可以了，打开的工作空间便是协议栈的框架，我们只需要在此基础上进行修改即可</p>
+</li>
+<li><p>Z-Stack协议软件包中提供了3个典型的用户示例工程，如下图，后续使用的是通用用户示例工程</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210528001421360.png" alt="image-20210528001421360"></p>
+</li>
+<li><p>当我们切换选项卡时所有的配置需要重新进行设置</p>
+</li>
+</ul>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210528001610273.png" alt="image-20210528001610273"></p>
+<h4 id="2-功能模块的添加"><a href="#2-功能模块的添加" class="headerlink" title="2.功能模块的添加"></a>2.功能模块的添加</h4><h5 id="1）-添加led-c-和led-h"><a href="#1）-添加led-c-和led-h" class="headerlink" title="1）.添加led.c 和led.h"></a>1）.添加led.c 和led.h</h5><ul>
+<li>1）把led.c 和led.h 复制到Source目录中</li>
+<li>2）在App文件组中单击右键添加.c文件，.h文件</li>
+</ul>
+<h5 id="2）-添加头文件"><a href="#2）-添加头文件" class="headerlink" title="2）.添加头文件"></a>2）.添加头文件</h5><ul>
+<li><p>在Zmain.c和GenericApp.c中添加包含头文件命令</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led_key.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="3）-添加函数"><a href="#3）-添加函数" class="headerlink" title="3）.添加函数"></a>3）.添加函数</h5><ul>
+<li><p>LED初始化函数放到main函数末尾osal_start_system()的前面</p>
+<blockquote>
+<p>其他的初始化或功能函数也是如此，只能放前面，不能放后面，原因前面有介绍</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="4）-其他操作"><a href="#4）-其他操作" class="headerlink" title="4）.其他操作"></a>4）.其他操作</h5><ul>
+<li><p>编译若发现错误可能是由于IAR编译器语法要求比较严格，需要Options–&gt;C/C++ Compiler把 Require prototype勾去掉</p>
+<blockquote>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210528002318607.png" alt="image-20210528002318607"></p>
+</blockquote>
+</li>
+<li><p>在GenericApp.c文件中的<strong>GenericApp_ProcessEvent</strong>函数中的switch语句的最后一个case进行修改,用if else使模式在不同的工作状态下，亮不同的灯。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> ZDO_STATE_CHANGE:</span><br><span class="line">    GenericApp_NwkState = (devStates_t)(MSGpkt-&gt;hdr.status);</span><br><span class="line">    <span class="keyword">if</span> (GenericApp_NwkState == DEV_ZB_COORD) <span class="comment">// 网络状态变成协调器</span></span><br><span class="line">    &#123;</span><br><span class="line">        led_ctrl(LED0,LED_ON);</span><br><span class="line">        led_ctrl(LED1,LED_ON);</span><br><span class="line">        osal_set_event(GenericApp_TaskID,GENERICAPP_MY_EVT1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(GenericApp_NwkState == DEV_ROUTER)  <span class="comment">// 网络状态变成路由器</span></span><br><span class="line">    &#123;</span><br><span class="line">        led_ctrl(LED0,LED_ON);</span><br><span class="line">        led_ctrl(LED1,LED_OFF);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(GenericApp_NwkState == DEV_END_DEVICE)  <span class="comment">// 网络状态变成网络终端</span></span><br><span class="line">    &#123;</span><br><span class="line">        led_ctrl(LED0,LED_OFF);</span><br><span class="line">        led_ctrl(LED1,LED_ON);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>去掉f8w2530.xcl文件中Include these two lines when generating a .hex file for banked code model: 后面两行</p>
+<p><img src="https://mikasae.github.io/Mikasa/boke/%E7%89%A9%E8%81%94%E7%BD%91%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/image-20210528002644649.png" alt="image-20210528002644649"></p>
+</li>
+</ul>
+<h4 id="3-事件的定义和添加"><a href="#3-事件的定义和添加" class="headerlink" title="3.事件的定义和添加"></a>3.事件的定义和添加</h4><h5 id="1）-定义事件宏"><a href="#1）-定义事件宏" class="headerlink" title="1）.定义事件宏"></a>1）.定义事件宏</h5><ul>
+<li><p>在GenericApp.h中定义事件的宏，也就是定义事件的16位bit编码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GenericApp_MY_EVT           0X0004</span></span><br><span class="line"><span class="comment">// 只能有一位是1，其余的都是0</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="2）定义事件要做的事情"><a href="#2）定义事件要做的事情" class="headerlink" title="2）定义事件要做的事情"></a>2）定义事件要做的事情</h5><ul>
+<li><p>在GenericApp.c文件中的GenericApp_ProcessEvent()函数定义事件要做的事情</p>
+<blockquote>
+<p>在事件处理函数中添加事件处理代码</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (GenericApp_NwkState == DEV_ZB_COORD) <span class="comment">// 网络状态变成协调器</span></span><br><span class="line">&#123;</span><br><span class="line">    osal_set_event(GenericApp_TaskID,GENERICAPP_MY_EVT1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p><a target="_blank" rel="noopener" href="http://www.cxyzjd.com/article/weixin_44127810/104341027">ZigBee学习笔记八-浅析协议栈</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/DIANZI520SUA/article/details/105687911">ZigBee 事件相关</a></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -433,7 +626,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/12/06%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE2/">占用位置</a>
+                    <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">占用位置</a>
                 </span>
             </li>
             
@@ -478,17 +671,17 @@
 
                 
                 <li>
-                    <a href="/categories/Git/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2021/05/26/11%E5%AE%9E%E8%AE%ADDay03/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/Git/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2021/05/26/11%E5%AE%9E%E8%AE%ADDay03/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/Git/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2021/05/26/11%E5%AE%9E%E8%AE%ADDay03/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -496,33 +689,33 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14.65640383388618px;" class="tag-cloud-link">杂谈</a>
+    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 15.68002151319348px;" class="tag-cloud-link">杂谈</a>
     
-    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 10.34649513067827px;" class="tag-cloud-link">碎碎念</a>
+    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 17.82602762466869px;" class="tag-cloud-link">碎碎念</a>
     
-    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 16.37873610123793px;" class="tag-cloud-link">Git 配置</a>
+    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 17.20107370991955px;" class="tag-cloud-link">Git 配置</a>
     
-    <a href="/tags/Git/" style="font-size: 8.349044127933261px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 19.191161606949102px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 10.912380523544204px;" class="tag-cloud-link">命令</a>
+    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 8.397851183260762px;" class="tag-cloud-link">命令</a>
     
-    <a href="/tags/npm/" style="font-size: 9.796405011823182px;" class="tag-cloud-link">npm</a>
+    <a href="/tags/npm/" style="font-size: 15.048072013635435px;" class="tag-cloud-link">npm</a>
     
-    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 17.962858391790505px;" class="tag-cloud-link">报错</a>
+    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 10.143269112063217px;" class="tag-cloud-link">报错</a>
     
-    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 14.109979781330544px;" class="tag-cloud-link">离散数学</a>
+    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 11.045175561748763px;" class="tag-cloud-link">离散数学</a>
     
-    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 8.576370745516144px;" class="tag-cloud-link">期末考试</a>
+    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 13.582394134553542px;" class="tag-cloud-link">期末考试</a>
     
-    <a href="/tags/Zigbee/" style="font-size: 16.321935055456702px;" class="tag-cloud-link">Zigbee</a>
+    <a href="/tags/Zigbee/" style="font-size: 12.670493119925872px;" class="tag-cloud-link">Zigbee</a>
     
-    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 11.929184336604735px;" class="tag-cloud-link">实训</a>
+    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 10.957986122087055px;" class="tag-cloud-link">实训</a>
     
-    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 17.761880677779597px;" class="tag-cloud-link">与我无关</a>
+    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 15.981135317927446px;" class="tag-cloud-link">与我无关</a>
     
-    <a href="/tags/Z-stack/" style="font-size: 16.550652328785887px;" class="tag-cloud-link">Z-stack</a>
+    <a href="/tags/Z-stack/" style="font-size: 8.64613999744336px;" class="tag-cloud-link">Z-stack</a>
     
-    <a href="/tags/CC2530/" style="font-size: 9.996592473380502px;" class="tag-cloud-link">CC2530</a>
+    <a href="/tags/CC2530/" style="font-size: 12.169098374344873px;" class="tag-cloud-link">CC2530</a>
     
 </div>
                 
