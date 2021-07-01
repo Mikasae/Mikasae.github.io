@@ -12,7 +12,7 @@
     
     
     
-    <title>Git使用 | Mikasa</title>
+    <title>Mikasa</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -196,7 +196,7 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/Git/">Git</a>
+                            <a href="/tags/Git-%E9%85%8D%E7%BD%AE/">Git 配置</a>
                         </li>
                         
                         
@@ -232,13 +232,13 @@
         <i class="fa fa-home"></i>
         <a href="http://example.com">Mikasa</a>
         >
-        <span>Git使用</span>
+        <span></span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/">Git使用</a>
+                <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/"></a>
             </h1>
         </div>
         <div class="tag-article">
@@ -267,7 +267,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/">Git使用</a>
+                    <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/"></a>
                 </h4>
             </div>
             <p>
@@ -341,7 +341,21 @@
 <ul>
 <li>分支</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支</span></span><br><span class="line">git branch</span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支和远程分支</span></span><br><span class="line">git branch -a</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建一个本地分支，依然停留在本分支   [branch-name]:分支名字</span></span><br><span class="line">git branch [branch-name]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换分支</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line">M CrawierMaven/DownloadMaven/Frame.java # M是带过来上个分支的修改</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除本地分支</span></span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除远程分支</span></span><br><span class="line">git branch -r -d origin/[branch-name]</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支</span></span><br><span class="line">git branch</span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支和远程分支</span></span><br><span class="line">git branch -a</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建一个本地分支，依然停留在本分支   [branch-name]:分支名字</span></span><br><span class="line">git branch [branch-name]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换分支</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line">M CrawierMaven/DownloadMaven/Frame.java # M是带过来上个分支的修改</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除本地分支</span></span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除远程分支</span></span><br><span class="line">git branch -r -d origin/[branch-name]</span><br><span class="line">git push origin --delete 【branch-name】</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>tag</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除远程tag</span></span><br><span class="line">git push origin :refs/tags/【tag名】</span><br><span class="line"><span class="comment"># 创建tag</span></span><br><span class="line">git tag -a 【tag名】 -m 【备注】</span><br><span class="line"><span class="comment"># 删除本地tag</span></span><br><span class="line">git tag -d 【tag名】</span><br><span class="line"><span class="comment"># 在github制作tag的步骤</span></span><br><span class="line"><span class="comment"># 1.创建tag</span></span><br><span class="line"><span class="comment"># 2.上传tag</span></span><br><span class="line">git push orgin 【tag名】</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分支合并</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将remmeiko分支合并到main</span></span><br><span class="line"><span class="comment"># 1.首先进入main分支合并remmeiko分支</span></span><br><span class="line">git merge remmeiko</span><br><span class="line"><span class="comment"># 2.查看合并状态是否存在冲突</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 3.解决冲突后添加</span></span><br><span class="line">git add ...</span><br><span class="line">git commit -m <span class="string">&quot;...&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+
+
 
 
     </div>
@@ -417,6 +431,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2021/07/01/14Cheverto%E5%9B%BE%E5%BA%8A/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2021/05/28/13%E5%AE%9E%E8%AE%ADDay05/">实训Day05</a>
                 </span>
             </li>
@@ -469,12 +489,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/05/10/04npm-node%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">node编译工具node-gyp相关错误</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -493,7 +507,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/">Git使用</a>
+                    <a href="/2021/05/08/01hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/">配置 多个GitHub账号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/"></a>
                 </span>
             </li>
             
@@ -523,12 +549,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/">实训Day01</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2021/05/25/10%E5%AE%9E%E8%AE%ADDay02/">实训Day02</a>
                 </span>
             </li>
@@ -536,12 +556,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2021/05/26/11%E5%AE%9E%E8%AE%ADDay03/">实训Day03</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/05/27/12%E5%AE%9E%E8%AE%ADDay04/">实训Day04</a>
                 </span>
             </li>
             
@@ -580,35 +594,41 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 11.137964159298935px;" class="tag-cloud-link">杂谈</a>
+    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10.385894028190005px;" class="tag-cloud-link">杂谈</a>
     
-    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 18.660596999099575px;" class="tag-cloud-link">碎碎念</a>
+    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 13.878392978362626px;" class="tag-cloud-link">碎碎念</a>
     
-    <a href="/tags/Git/" style="font-size: 11.656879333532245px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 14.808440499451104px;" class="tag-cloud-link">Git 配置</a>
     
-    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 13.154605988031399px;" class="tag-cloud-link">命令</a>
+    <a href="/tags/Git/" style="font-size: 15.659432377161362px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 11.957733822644114px;" class="tag-cloud-link">Git 配置</a>
+    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 17.007890625563654px;" class="tag-cloud-link">命令</a>
     
-    <a href="/tags/npm/" style="font-size: 16.419224556659px;" class="tag-cloud-link">npm</a>
+    <a href="/tags/npm/" style="font-size: 8.932084713247267px;" class="tag-cloud-link">npm</a>
     
-    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 17.7106068032907px;" class="tag-cloud-link">报错</a>
+    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 10.303109006499977px;" class="tag-cloud-link">报错</a>
     
-    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 17.109123343059395px;" class="tag-cloud-link">离散数学</a>
+    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10.39666758038502px;" class="tag-cloud-link">离散数学</a>
     
-    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 16.36128341673465px;" class="tag-cloud-link">期末考试</a>
+    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 16.77670248550114px;" class="tag-cloud-link">期末考试</a>
     
-    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 9.071572401449448px;" class="tag-cloud-link">与我无关</a>
+    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 8.144729914390641px;" class="tag-cloud-link">与我无关</a>
     
-    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 18.492500517503146px;" class="tag-cloud-link">实训</a>
+    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 19.993680402444593px;" class="tag-cloud-link">实训</a>
     
-    <a href="/tags/Zigbee/" style="font-size: 19.722697066816316px;" class="tag-cloud-link">Zigbee</a>
+    <a href="/tags/Zigbee/" style="font-size: 19.169629677253045px;" class="tag-cloud-link">Zigbee</a>
     
-    <a href="/tags/CC2530/" style="font-size: 17.652518317461475px;" class="tag-cloud-link">CC2530</a>
+    <a href="/tags/CC2530/" style="font-size: 19.78670346869656px;" class="tag-cloud-link">CC2530</a>
     
-    <a href="/tags/Z-stack/" style="font-size: 16.50855392850812px;" class="tag-cloud-link">Z-stack</a>
+    <a href="/tags/Z-stack/" style="font-size: 10.600911808806961px;" class="tag-cloud-link">Z-stack</a>
     
-    <a href="/tags/UART/" style="font-size: 19.956444543733074px;" class="tag-cloud-link">UART</a>
+    <a href="/tags/UART/" style="font-size: 8.491624987419874px;" class="tag-cloud-link">UART</a>
+    
+    <a href="/tags/Zigbee%E9%80%9A%E4%BF%A1/" style="font-size: 15.040197375354758px;" class="tag-cloud-link">Zigbee通信</a>
+    
+    <a href="/tags/Cheverto/" style="font-size: 8.31057778144173px;" class="tag-cloud-link">Cheverto</a>
+    
+    <a href="/tags/%E5%B9%BF%E5%BA%A6/" style="font-size: 14.332422387955887px;" class="tag-cloud-link">广度</a>
     
 </div>
                 

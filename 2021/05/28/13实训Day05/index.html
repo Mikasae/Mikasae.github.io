@@ -196,7 +196,7 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/Git/">Git</a>
+                            <a href="/tags/Git-%E9%85%8D%E7%BD%AE/">Git 配置</a>
                         </li>
                         
                         
@@ -246,7 +246,9 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>
+                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>, 
+                
+                <a href="/tags/Zigbee%E9%80%9A%E4%BF%A1/">Zigbee通信</a>
                 
             </span>
             
@@ -275,7 +277,9 @@
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>
+                <a href="/tags/%E5%AE%9E%E8%AE%AD/">实训</a>, 
+                
+                <a href="/tags/Zigbee%E9%80%9A%E4%BF%A1/">Zigbee通信</a>
                 
                 
                 
@@ -285,7 +289,215 @@
         </center>
     </div>
     <div class="content-article">
-        
+        <h1 id="Zigbee通信"><a href="#Zigbee通信" class="headerlink" title="Zigbee通信"></a>Zigbee通信</h1><blockquote>
+<p>这篇文章就是将末尾的PPT重新复制到了文章之中，别问，问就是懒</p>
+</blockquote>
+<h2 id="0x01无线通信"><a href="#0x01无线通信" class="headerlink" title="0x01无线通信"></a>0x01无线通信</h2><h3 id="1-无线通信理论"><a href="#1-无线通信理论" class="headerlink" title="1.无线通信理论"></a>1.无线通信理论</h3><ul>
+<li><p>Zigbee无线通信，需要高频的载波来提供发射频率，Zigbee模块之间要可以正常通信，接收模块和发送模块的频率要一致。</p>
+</li>
+<li><p>Zigbee有27个载波可以进行通信，载波又叫做信道。这些载波的频率落在某些频率区段，我们把这些区段叫做频段。</p>
+<blockquote>
+<p>2.4G频段            16个信道</p>
+<p> 915M频段   896M频段  11个信道</p>
+<p>但TI的所有支持Zigbee底层协议的芯片只能在2.4G频段的16个信道里进行通信。即11<del>26信道(0</del>10信道在915M和896M的频段内)</p>
+</blockquote>
+</li>
+<li><p>网络地址</p>
+<ul>
+<li>在Zigbee无线局域网里，每一个模块都有一个在该网络里唯一的2个字节的地址，这个地址我们叫做网络地址(或者叫做网络短地址)。</li>
+</ul>
+</li>
+<li><p>PANID</p>
+<ul>
+<li>这也是一个2个字节的编号，用来区分不用的Zigbee无线局域网，我们称为个域网ID。两个模块之间要进行通信，PANID一定要一样。</li>
+</ul>
+</li>
+<li><p>信道与PANID的设置</p>
+<ul>
+<li><p>在Tools文件组里的f8wConfig.cfg文件中</p>
+</li>
+<li><p>(1)设置信道</p>
+<blockquote>
+<p>-DDEFAULT_CHANLIST=0x00000800 // 11 - 0x0B</p>
+</blockquote>
+</li>
+<li><p>(2)设置PANID</p>
+<blockquote>
+<p> -DZDAPP_CONFIG_PAN_ID=0x1234</p>
+</blockquote>
+<blockquote>
+<p>注意:如果把PANID设置为0xFFFF,则意味着该模块不受PANID的限制</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-网络组建理论"><a href="#2-网络组建理论" class="headerlink" title="2.网络组建理论"></a>2.网络组建理论</h3><ul>
+<li><p>在Zigbee无线局域网里，节点(无线模块)按照在网络里的功能可以划分为:协调器、路由器、终端这三种角色</p>
+</li>
+<li><p>它们的硬件可以是一模一样的，之所以在网络里表现出不同的功能，是因为它们下载了不同功能版本的程序，在同一个网络里担当了不同的角色功能。</p>
+<blockquote>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210531092938956.png" alt="image-20210531092938956"></p>
+</blockquote>
+</li>
+<li><p>下载了路由器和终端代码的模块，它们上电后的第一件事情去寻找网络，请求加入。然而网络不会无缘无故产生，是由下载了协调器代码的模块创建的。</p>
+</li>
+<li><p>下载了协调器代码的模块上电后的第一件事就是创建网络。</p>
+</li>
+<li><p>任何一个网络里，第一个节点一定是该网络的协调器，有且只能有一个协调器</p>
+</li>
+<li><p>任何一个Zigbee模块要加入到某个网络，一定要一个处于该网络里的节点作为介绍人，并且这个介绍人不能是终端节点(即路由器或者协调器)。在加入网络以后，介绍人节点和被介绍加入的节点互为父子关系。</p>
+</li>
+<li><p>介绍人是被介绍人的父节点，被介绍人是介绍人的、子节点。有多个可作为介绍人资格的节点，会选择信号强度高的节点作为介绍人。</p>
+</li>
+<li><p>协调器在创建完网络后，在网络里的功能与路由器没有任何区别，只不过协调器的网络地址比较特殊只能是0x0000，而其他加入的节点的网络地址是动态分配的。</p>
+</li>
+<li><p>终端节点与其他模块的通信必须要通过它的父节点，而路由器(协调器)之间通信可以直接通信的。</p>
+</li>
+<li><p>因此，<strong>路由器在网络里充当的是拓扑扩展的中转站的功能</strong>。</p>
+</li>
+<li><p>综合</p>
+<ul>
+<li>我们可以在GenericApp.c文件中的GenericApp_ProcessEvent函数中的switch语句的 case ZDO_STATE_CHANGE中修改代码内容，让模块在不同的网络状态下亮不同的灯。</li>
+<li>注意:下载了协调器的代码的模块，创建了网络之后就是协调器状态，而终端和路由器要加入了网络才是对应的状态。终端和路由器要加入网络的条件是，信道和PANID要一致。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-三种网络架构"><a href="#3-三种网络架构" class="headerlink" title="3.三种网络架构"></a>3.三种网络架构</h3><ol>
+<li><p>星形拓扑</p>
+<ul>
+<li><p>星形拓扑是最简单的一种拓扑形式，他包含一个Co-ordinator（协调者） 节点和一系列的 End Device（终端）节点。每一个End Device 节点只能和 Co-ordinator 节点进行通讯。如果需要在两个 End Device 节点之间进行通讯必须通过Co-ordinator 节点进行信息的转发。</p>
+<blockquote>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210531093356279.png" alt="image-20210531093356279"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>树形拓扑</p>
+<ul>
+<li><p>树形拓扑包括一个Co-ordinator（协调者）以及一系列的 Router（路由器） 和 End Device（终端）节点。Co-ordinator 连接一系列的 Router 和 End Device， 他的子节点的 Router也可以连接一系列的 Router 和End Device. 这样可以重复多个层级。</p>
+<blockquote>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210531093438391.png" alt="image-20210531093438391"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Mesh拓扑（网状拓扑） </p>
+<ul>
+<li><p>包含一个Co-ordinator和一系列的Router 和End Device。这种网络拓扑形式和树形拓扑相同；请参考上面所提到的树形网络拓扑。但是，网状网络拓扑具有更加灵活的信息路由规则，在可能的情况下，路由节点之间可以直接的通讯。这种路由机制使得信息的通讯变得更有效率，而且意味这一旦一个路由路径出现了问题，信息可以自动的沿着其他的路由路径进行传输。 网状拓扑的示意图如下所示：</p>
+<blockquote>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210531093511344.png" alt="image-20210531093511344"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>架构比较</p>
+<ul>
+<li><p>MESH 网状网络拓扑结构的网络具有强大的功能，网络可以通过“多级跳”的方式来通信；该拓扑结构还可以组成极为复杂的网络；网络还具备自组织、自愈功能；</p>
+</li>
+<li><p>星型和族树型网络适合点多多点、距离相对较近的应用。</p>
+</li>
+<li><p>代码设置，在“nwk_global.h”文件中进行设置,159行处</p>
+<blockquote>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210531093825604.png" alt="image-20210531093825604"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="0x02-单播通信"><a href="#0x02-单播通信" class="headerlink" title="0x02 单播通信"></a>0x02 单播通信</h2><h3 id="1-单播通信理论"><a href="#1-单播通信理论" class="headerlink" title="1.单播通信理论"></a>1.单播通信理论</h3><ul>
+<li><p>Zigbee网络通信方式有4种：单播，广播，组播，绑定(MAC)。</p>
+</li>
+<li><p>单播通信的特点:在Zigbee网络里，模块之间要进行通信，发射模块要明确知道接收模块的网络地址。</p>
+</li>
+<li><p>Zigbee模块的地址特点:模块在加入网络的时候，父节点随机分配网络地址给子节点。但是协调器模块在网络里的地址永远都是0x00。</p>
+</li>
+<li><p>单播发送数据需要明确的信息</p>
+<ul>
+<li>(1)目标地址</li>
+<li>(2)目标端点与簇</li>
+<li>(3)要发送的数据大小</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-GenericApp-SendTheMessage"><a href="#2-GenericApp-SendTheMessage" class="headerlink" title="2.GenericApp_SendTheMessage()"></a>2.GenericApp_SendTheMessage()</h3><ul>
+<li>该函数在GenericApp.c里的GenericApp_SendTheMessage函数里:</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">AF_DataRequest(</span><br><span class="line">              &amp;GenericApp_DstAddr, <span class="comment">//目标的网络地址指针</span></span><br><span class="line">              &amp;GenericApp_epDesc,<span class="comment">//端点描述符指针</span></span><br><span class="line">              GENERICAPP_CLUSTERID,<span class="comment">//目标簇</span></span><br><span class="line">              (byte)osal_strlen( theMessageData ) + <span class="number">1</span>,<span class="comment">//发送数据的大小</span></span><br><span class="line">              (byte *)&amp;theMessageData,<span class="comment">//发送数据缓冲区的地址</span></span><br><span class="line">              &amp;GenericApp_TransID,<span class="comment">//这是个全局变量，用来保存发送的次数</span></span><br><span class="line">              AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );<span class="comment">//发送路径，don&#x27;t care</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-网络地址结构体"><a href="#3-网络地址结构体" class="headerlink" title="3.网络地址结构体"></a>3.网络地址结构体</h3><ul>
+<li>网络地址结构体就是定义在GenericApp.c前面的一个结构体变量，该类型为afAddrType_t，系统已经默认定义了一个网络地址结构体变量GenericApp_DstAddr，我们可以在GenericApp_Init()函数中，对网络地址结构体变量的成员进行赋值。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 网络地址结构体:</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">      <span class="class"><span class="keyword">union</span></span></span><br><span class="line"><span class="class">     &#123;</span></span><br><span class="line">            uint16      shortAddr;<span class="comment">//网络地址</span></span><br><span class="line">            ZLongAddr_t extAddr; <span class="comment">//MAC地址</span></span><br><span class="line">     &#125; addr;</span><br><span class="line">     afAddrMode_t addrMode;<span class="comment">//通信模式</span></span><br><span class="line">     byte endPoint; <span class="comment">//指定的端点</span></span><br><span class="line">     uint16 panId;  <span class="comment">//don&#x27;t care</span></span><br><span class="line">&#125; afAddrType_t;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通信模式枚举类型:</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">        afAddrNotPresent = AddrNotPresent,<span class="comment">//当前不确定</span></span><br><span class="line">        afAddr16Bit      = Addr16Bit,<span class="comment">//单播通信模式</span></span><br><span class="line">        afAddr64Bit      = Addr64Bit,<span class="comment">//MAC通信模式</span></span><br><span class="line">        afAddrGroup      = AddrGroup,<span class="comment">//组播通信模式</span></span><br><span class="line">        afAddrBroadcast  = AddrBroadcast<span class="comment">//广播通信模式</span></span><br><span class="line">&#125; afAddrMode_t;	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-端点"><a href="#4-端点" class="headerlink" title="4.端点"></a>4.端点</h3><ul>
+<li><p>(1)通常发送的数据要明确该数据是给接收模块的哪个任务层用的，而这个就是用端点来指定的</p>
+</li>
+<li><p>(2)端点是一个字节的编号，通常为定义在GenericApp.h中的一个宏。端点必须要与任务层绑定，而这个就是用端点描述符来实现的。</p>
+</li>
+<li><p>(3)端点描述符是一个结构体变量，该变量定义在GenericApp.c开头，我们也可以定义新的端点描述符。该结构体的类型为 endPointDesc_t，系统也默认定义了一个端点描述符GenericApp_epDesc。</p>
+</li>
+<li><p>(4)我们可以在 GenericApp_Init()函数中，把新的端点描述符变量赋值，使新的端点与某个任务层绑定。</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 端点结构体类型:</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">       byte endPoint;<span class="comment">//端点的值</span></span><br><span class="line">       byte *task_id;  <span class="comment">//与端点绑定的任务层ID</span></span><br><span class="line">       SimpleDescriptionFormat_t *simpleDesc;<span class="comment">//端点的描述信息,don’t care</span></span><br><span class="line">       afNetworkLatencyReq_t latencyReq;<span class="comment">//don’t care</span></span><br><span class="line">&#125; endPointDesc_t;	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-簇"><a href="#5-簇" class="headerlink" title="5.簇"></a>5.簇</h3><ul>
+<li><p>(1)在接收模块中，每个任务层可以对不同种类的数据采取不同的处理方式，这里的数据种类就是簇(CLUSTER)</p>
+</li>
+<li><p>(2)在发送模块中，簇是定义在GenericApp.h中的一个宏，我们也可以定义新的簇。</p>
+</li>
+<li><p>(3) 系统也默认定义了一个簇 GenericApp_CLUSTERID，在GenericApp.h中</p>
+</li>
+</ul>
+<h3 id="6-应用任务层数据接收函数"><a href="#6-应用任务层数据接收函数" class="headerlink" title="6.应用任务层数据接收函数"></a>6.应用任务层数据接收函数</h3><ul>
+<li><p>(1)该函数为GenericApp.c中的 void GenericApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )</p>
+</li>
+<li><p>(2)在switch语句中可以定义对不同的簇采用不同的方式处理数据</p>
+</li>
+<li><p>(3)该函数中的pkt-&gt;cmd.Data就是接收数据的首地址</p>
+</li>
+</ul>
+<h2 id="0x03-无线通信代码编写过程"><a href="#0x03-无线通信代码编写过程" class="headerlink" title="0x03 无线通信代码编写过程"></a>0x03 无线通信代码编写过程</h2><h3 id="1-设置信道与PANID"><a href="#1-设置信道与PANID" class="headerlink" title="1.设置信道与PANID"></a>1.设置信道与PANID</h3><blockquote>
+<p>在Tools文件组里的f8wConfig.cfg文件中</p>
+<p>-DDEFAULT_CHANLIST=0x00000800 // 11 - 0x0B</p>
+<p>-DZDAPP_CONFIG_PAN_ID=0x1234</p>
+</blockquote>
+<h3 id="2-设置AF-DataRequest结构体"><a href="#2-设置AF-DataRequest结构体" class="headerlink" title="2.设置AF_DataRequest结构体"></a>2.设置AF_DataRequest结构体</h3><p>在GenericApp.c里的GenericApp_SendTheMessage函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">AF_DataRequest(</span><br><span class="line">    &amp;GenericApp_DstAddr, <span class="comment">//目标的网络地址指针</span></span><br><span class="line">    &amp;GenericApp_epDesc,<span class="comment">//端点描述符指针</span></span><br><span class="line">    GENERICAPP_CLUSTERID,<span class="comment">//目标簇</span></span><br><span class="line">    (byte)osal_strlen( theMessageData ) + <span class="number">1</span>,<span class="comment">//发送数据的大小</span></span><br><span class="line">    (byte *)&amp;theMessageData,<span class="comment">//发送数据缓冲区的地址</span></span><br><span class="line">    &amp;GenericApp_TransID,<span class="comment">//这是个全局变量，用来保存发送的次数</span></span><br><span class="line">    AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );<span class="comment">//发送路径，don&#x27;t care</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210528162437459.png" alt="image-20210528162437459"></p>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210528164343762.png" alt="image-20210528164343762"></p>
+<p><img src="../../../../../%E5%9B%BE%E7%89%87/%E8%B5%84%E6%96%99/01Typora%E4%BF%9D%E5%AD%98/image-20210528164903849.png" alt="image-20210528164903849"></p>
+
     </div>
 </article>
 
@@ -359,6 +571,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2021/07/01/14Cheverto%E5%9B%BE%E5%BA%8A/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2021/05/28/13%E5%AE%9E%E8%AE%ADDay05/">实训Day05</a>
                 </span>
             </li>
@@ -411,12 +629,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/05/10/04npm-node%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">node编译工具node-gyp相关错误</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -435,13 +647,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/08/01hello-world/">Hello World</a>
+                    <a href="/2021/05/08/02%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7/">配置 多个GitHub账号</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/">Git使用</a>
+                    <a href="/2021/05/09/03Git%E4%BD%BF%E7%94%A8/"></a>
                 </span>
             </li>
             
@@ -489,7 +701,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/28/13%E5%AE%9E%E8%AE%ADDay05/">实训Day05</a>
+                    <a href="/2021/07/01/14Cheverto%E5%9B%BE%E5%BA%8A/"></a>
                 </span>
             </li>
             
@@ -522,35 +734,41 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 9.29333540112896px;" class="tag-cloud-link">杂谈</a>
+    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 13.590944685663008px;" class="tag-cloud-link">杂谈</a>
     
-    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 18.62167341412745px;" class="tag-cloud-link">碎碎念</a>
+    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 10.560386408393384px;" class="tag-cloud-link">碎碎念</a>
     
-    <a href="/tags/Git/" style="font-size: 16.856768999217536px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 17.58770211030691px;" class="tag-cloud-link">Git 配置</a>
     
-    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 9.682775722226893px;" class="tag-cloud-link">命令</a>
+    <a href="/tags/Git/" style="font-size: 16.84726468474648px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 12.834985689437701px;" class="tag-cloud-link">Git 配置</a>
+    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 8.041443978452314px;" class="tag-cloud-link">命令</a>
     
-    <a href="/tags/npm/" style="font-size: 16.602064538321876px;" class="tag-cloud-link">npm</a>
+    <a href="/tags/npm/" style="font-size: 16.429444876757856px;" class="tag-cloud-link">npm</a>
     
-    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 13.027844048449289px;" class="tag-cloud-link">报错</a>
+    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 14.78851529150413px;" class="tag-cloud-link">报错</a>
     
-    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 16.18239323594054px;" class="tag-cloud-link">离散数学</a>
+    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 16.52746861535708px;" class="tag-cloud-link">离散数学</a>
     
-    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 11.914182072317354px;" class="tag-cloud-link">期末考试</a>
+    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 19.16139166839468px;" class="tag-cloud-link">期末考试</a>
     
-    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 12.590507907101628px;" class="tag-cloud-link">与我无关</a>
+    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 9.6834394491459px;" class="tag-cloud-link">与我无关</a>
     
-    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 12.494300023961944px;" class="tag-cloud-link">实训</a>
+    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 8.50018088166022px;" class="tag-cloud-link">实训</a>
     
-    <a href="/tags/Zigbee/" style="font-size: 9.830747267249826px;" class="tag-cloud-link">Zigbee</a>
+    <a href="/tags/Zigbee/" style="font-size: 18.348588884970994px;" class="tag-cloud-link">Zigbee</a>
     
-    <a href="/tags/CC2530/" style="font-size: 13.266282130288047px;" class="tag-cloud-link">CC2530</a>
+    <a href="/tags/CC2530/" style="font-size: 10.429181429010896px;" class="tag-cloud-link">CC2530</a>
     
-    <a href="/tags/Z-stack/" style="font-size: 19.678267500111996px;" class="tag-cloud-link">Z-stack</a>
+    <a href="/tags/Z-stack/" style="font-size: 14.145974286135878px;" class="tag-cloud-link">Z-stack</a>
     
-    <a href="/tags/UART/" style="font-size: 8.063090608283701px;" class="tag-cloud-link">UART</a>
+    <a href="/tags/UART/" style="font-size: 8.99156281673806px;" class="tag-cloud-link">UART</a>
+    
+    <a href="/tags/Zigbee%E9%80%9A%E4%BF%A1/" style="font-size: 8.25045334228966px;" class="tag-cloud-link">Zigbee通信</a>
+    
+    <a href="/tags/Cheverto/" style="font-size: 14.890149369207505px;" class="tag-cloud-link">Cheverto</a>
+    
+    <a href="/tags/%E5%B9%BF%E5%BA%A6/" style="font-size: 10.298552490620743px;" class="tag-cloud-link">广度</a>
     
 </div>
                 
