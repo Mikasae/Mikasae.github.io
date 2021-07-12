@@ -12,7 +12,7 @@
     
     
     
-    <title>占用位置 | Mikasa</title>
+    <title>Windwos终端美化 | Mikasa</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -232,16 +232,25 @@
         <i class="fa fa-home"></i>
         <a href="http://example.com">Mikasa</a>
         >
-        <span>占用位置</span>
+        <span>Windwos终端美化</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">占用位置</a>
+                <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">Windwos终端美化</a>
             </h1>
         </div>
         <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%8A%98%E8%85%BE/">折腾</a>, 
+                
+                <a href="/tags/Windows-Terminal/">Windows Terminal</a>
+                
+            </span>
             
             <span class="label label-gal">
                 <i class="fa fa-calendar"></i> 2021-05-11
@@ -258,13 +267,20 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">占用位置</a>
+                    <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">Windwos终端美化</a>
                 </h4>
             </div>
             <p>
                 <i class="fa fa-calendar"></i> 2021-05-11
             </p>
             <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%8A%98%E8%85%BE/">折腾</a>, 
+                
+                <a href="/tags/Windows-Terminal/">Windows Terminal</a>
+                
                 
                 
                 <i class="fa fa-eye"></i>
@@ -273,7 +289,201 @@
         </center>
     </div>
     <div class="content-article">
-        
+        <h1 id="终端美化"><a href="#终端美化" class="headerlink" title="终端美化"></a>终端美化</h1><h2 id="0x01介绍"><a href="#0x01介绍" class="headerlink" title="0x01介绍"></a>0x01介绍</h2><h3 id="原生状态"><a href="#原生状态" class="headerlink" title="原生状态"></a>原生状态</h3><ul>
+<li><p>cmd</p>
+<blockquote>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101126016.png" alt="image-20210710101126016"></p>
+</blockquote>
+</li>
+<li><p>powershell</p>
+<blockquote>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101206515.png" alt="image-20210710101206515"></p>
+</blockquote>
+</li>
+<li><p>Windows Terminal</p>
+<blockquote>
+<p>在Windows11中系统已将其作为了默认的终端工具，Windows10如果没有的话在Microsoft store中搜索WIndows Terminal下载即可</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101431797.png" alt="image-20210710101431797"></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="美化后"><a href="#美化后" class="headerlink" title="美化后"></a>美化后</h3><ul>
+<li><p>cmd</p>
+<blockquote>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101517310.png" alt="image-20210710101517310"></p>
+</blockquote>
+</li>
+<li><p>power Shell</p>
+<blockquote>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101600535.png" alt="image-20210710101600535"></p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101620050.png" alt="image-20210710101620050"></p>
+</blockquote>
+</li>
+<li><p>Windows Terminal</p>
+<blockquote>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101816221.png" alt="image-20210710101816221"></p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210710101936670.png" alt="image-20210710101936670"></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>Windows Terminal终端就好比一个容器，可以将cmd和powershell等这些命令行解释器(shell)集成在一起，一同管理和使用。</p>
+<p>所以正常情况下配置好Windows Terminal以后我们完全可以在Windows Terminal中对其他shell进行美化，而且也不再需要单独使用其他终端(单独cmd,powershell)等</p>
+<blockquote>
+<p>但是我有的时候还是会用到原生的cmd和powershell，所以我还是对我需要用到的终端进行了了适度的美化,这个美化其实就是在配中更改一下字体、背景颜色等，大家可以根据自己的审美配置。</p>
+</blockquote>
+<h2 id="0x02-Windows-Terminal美化"><a href="#0x02-Windows-Terminal美化" class="headerlink" title="0x02 Windows Terminal美化"></a>0x02 Windows Terminal美化</h2><h3 id="1-安装所需字体"><a href="#1-安装所需字体" class="headerlink" title="1.安装所需字体"></a>1.安装所需字体</h3><blockquote>
+<p>因为oh-my-posh使用到的一些特殊符号很多字体是不支持的，会出现乱码</p>
+</blockquote>
+<p>我使用的是官方推荐的字体Nerd Fonts字体<a target="_blank" rel="noopener" href="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip">Meslo LGM NF</a>，另外像<a target="_blank" rel="noopener" href="https://github.com/be5invis/Sarasa-Gothic/releases">更纱黑体</a>也是可以的，不会出现乱码问题，安装步骤：</p>
+<ul>
+<li><p>从字体地址下载压缩包进行解压，得到详细字体(其中红框中的字体是我最终使用的)</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712005818322.png" alt="image-20210712005818322"></p>
+</li>
+<li><p>可以双击字体进行预览，确定喜欢的字体后，点击安装即可</p>
+<blockquote>
+<p><img src="F:\个人文件\图片\资料\01Typora保存\image-20210712010051676.png" alt="image-20210712010051676"></p>
+</blockquote>
+</li>
+<li><p>然后在设置文件对应的shell添加以下配置（可以先不管，后面会详细讲）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;fontFace&quot;</span>:<span class="string">&quot;MesloLGM NF&quot;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-安装所需模块"><a href="#2-安装所需模块" class="headerlink" title="2.安装所需模块"></a>2.安装所需模块</h3><p>终端美化主要需要两个模块：posh-git和oh-my-posh</p>
+<p>安装命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以管理员身份打开powershell</span></span><br><span class="line">Install-Module posh-git -Scope CurrentUser  <span class="comment"># 只为当前用户安装</span></span><br><span class="line">Install-Module oh-my-posh -Scope CurrentUser</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>posh-git模块可以提供类似于oh-my-zsh一样的git显示分支信息，并且可以给 Git 命令、参数、远程和分支名称添加 tab 自动补全</p>
+<p>oh-my-posh类似于oh-my-zsh，提供了许多主题供我们选择</p>
+<p>oh-my-zsh后续也会讲到，用于Linux终端的个性化配置</p>
+<p>详情参考：<a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/fonts">oh-my-posh官方文档</a></p>
+</blockquote>
+<h3 id="3-开始设置"><a href="#3-开始设置" class="headerlink" title="3.开始设置"></a>3.开始设置</h3><p>在powershell终端输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果之前没有配置文件，就新建一个 PowerShell 配置文件</span></span><br><span class="line"><span class="keyword">if</span> (!(Test-Path -Path <span class="variable">$PROFILE</span> )) &#123; New-Item -Type File -Path <span class="variable">$PROFILE</span> -Force &#125;</span><br><span class="line">用记事本打开配置文件</span><br><span class="line">notepad <span class="variable">$PROFILE</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这条命令是打开powershell的配置文件，如果文件不存在就自动创建配置文件，创建的配置文件一般在<code>C:\Users\&lt;用户名&gt;\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code>这个路径，可以直接找到这个路径修改配置</li>
+</ul>
+<p>打开配置文件后添加以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Import-Module posh-git </span><br><span class="line">Import-Module oh-my-posh </span><br><span class="line">Set-PoshPrompt -Theme iterm2 <span class="comment"># 【以前是Set-Theme 主题命令】</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加的内容是在shell中加载安装的模块和设置主题</li>
+</ul>
+<blockquote>
+<p>配置文件中的命令是可以一条一条在终端运行的，但是那样的话当你重新打开shell时所有配置就会丢失，因此需要写入Windows PowerShell的用户配置文件，每次启动时就会自动加载这个脚本</p>
+</blockquote>
+<h3 id="5-选择主题"><a href="#5-选择主题" class="headerlink" title="5.选择主题"></a>5.选择主题</h3><ol>
+<li><p><code>Get-PoshThemes</code>可以用来查看主题样式</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712110519376.png" alt="image-20210712110519376"></p>
+<blockquote>
+<p>也可以访问<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">ohmyzsh-github</a>查看主题样式</p>
+</blockquote>
+</li>
+<li><p><code> Set-PoshPrompt -Theme 主题</code>命令用来进行主题预览</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712110827278.png" alt="image-20210712110827278"></p>
+<blockquote>
+<p>这只是预览，当你重新打开一个Terminal时还是用的原来的主题，因此想要以后打开都时这个主题那么还是要修改前面说的配置文件</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="6-设置Windows-Terminal配置文件"><a href="#6-设置Windows-Terminal配置文件" class="headerlink" title="6. 设置Windows Terminal配置文件"></a>6. 设置Windows Terminal配置文件</h3><blockquote>
+<p>配置文件参数详情可参考：<a target="_blank" rel="noopener" href="https://sspai.com/post/59380">新生代 Windows 终端：Windows Terminal 的全面自定义</a></p>
+<p>此处只说以下我用到的</p>
+</blockquote>
+<p>环境入口<code>profiles</code>中有个列表，列表中每一项就是一个下拉菜单中的shell环境，通过修改对应的配置从而修改对应Terminal </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;PowerShell&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;powershell.exe -nologo&quot;</span>, <span class="comment">//-nologo这个参数可以去掉启动时开头的那句话</span></span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;startingDirectory&quot;</span> : <span class="string">&quot;C:/Users/31327/Desktop&quot;</span>, <span class="comment">// 启动时的初始路径</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">&quot;acrylicOpacity&quot;</span> : <span class="number">0.5</span>, <span class="comment">//  定义亚克力效果的透明度</span></span><br><span class="line">    <span class="attr">&quot;useAcrylic&quot;</span>: <span class="literal">true</span>, <span class="comment">// 背景启用亚克力着色(理解为毛玻璃)</span></span><br><span class="line">    <span class="attr">&quot;background&quot;</span> : <span class="string">&quot;#242425&quot;</span>,  <span class="comment">// 背景颜色</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// &quot;backgroundImage&quot; : &quot;F://个人文件//图片//动漫//02壁纸(轮换)(人物)//79965347_p11.jpg&quot;, // 图片地址&quot;backgroundImageOpacity&quot; : 0.8,  //透明度</span></span><br><span class="line">    <span class="comment">// &quot;backgroundImageStretchMode&quot;: &quot;uniformToFill&quot;, // 图片伸缩模式：设置伸缩模式成按比例放大</span></span><br><span class="line">    <span class="comment">// &quot;backgroundImageOpacity&quot; : 0.5,  //透明度</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;fontFace&quot;</span>:<span class="string">&quot;MesloLGM NF&quot;</span>, <span class="comment">// 字体</span></span><br><span class="line">    <span class="attr">&quot;fontSize&quot;</span>: <span class="number">10</span>, <span class="comment">// 字体大小</span></span><br><span class="line">    <span class="attr">&quot;historySize&quot;</span>: <span class="number">9001</span>,</span><br><span class="line">    <span class="attr">&quot;padding&quot;</span>: <span class="string">&quot;5, 5, 20, 25&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;tabTitle&quot;</span> : <span class="string">&quot;Powershell&quot;</span>, <span class="comment">// Tab名称</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;colorScheme&quot;</span>: <span class="string">&quot;Cobalt Neon&quot;</span> <span class="comment">// 颜色方案</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>“commandline”: “powershell.exe -nologo”中-nologo这个参数可以去掉启动时开头的那句话</li>
+</ul>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712153125370.png" alt="image-20210712153125370"></p>
+<ul>
+<li>如果想要实现毛玻璃的效果就不能使用背景图片，实现毛玻璃主要是acrylicOpacity，useAcrylic这两个参数，而中间注释的一段就是用来设置图片的，可以根据个人口味选择，我倾向于毛玻璃，就是开头所示范的</li>
+</ul>
+</blockquote>
+<p>颜色方案：就是用来设置各个代码不同的颜色</p>
+<p>推荐几个颜色方案的网站：<a target="_blank" rel="noopener" href="https://windowsterminalthemes.dev/">https://windowsterminalthemes.dev/</a></p>
+<p>从中选择好自己喜欢的颜色方案后,复制下来一般是json格式,放入配置文件的<code>schemes</code>列表中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&quot;schemes&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Cobalt Neon&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;black&quot;</span>: <span class="string">&quot;#142631&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;red&quot;</span>: <span class="string">&quot;#ff2320&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;green&quot;</span>: <span class="string">&quot;#3ba5ff&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;yellow&quot;</span>: <span class="string">&quot;#e9e75c&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;blue&quot;</span>: <span class="string">&quot;#8ff586&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;purple&quot;</span>: <span class="string">&quot;#781aa0&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;cyan&quot;</span>: <span class="string">&quot;#8ff586&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;white&quot;</span>: <span class="string">&quot;#ba46b2&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightBlack&quot;</span>: <span class="string">&quot;#fff688&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightRed&quot;</span>: <span class="string">&quot;#d4312e&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightGreen&quot;</span>: <span class="string">&quot;#8ff586&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightYellow&quot;</span>: <span class="string">&quot;#e9f06d&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightBlue&quot;</span>: <span class="string">&quot;#3c7dd2&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightPurple&quot;</span>: <span class="string">&quot;#8230a7&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightCyan&quot;</span>: <span class="string">&quot;#6cbc67&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;brightWhite&quot;</span>: <span class="string">&quot;#8ff586&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;background&quot;</span>: <span class="string">&quot;#142838&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;foreground&quot;</span>: <span class="string">&quot;#8ff586&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;selectionBackground&quot;</span>: <span class="string">&quot;#094fb1&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;cursorColor&quot;</span>: <span class="string">&quot;#c4206f&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>然后<code>name</code>复制到对应的Terminal的<code>colorScheme</code>中即可，至此美化设置就完毕了</p>
+<h3 id="7-报错"><a href="#7-报错" class="headerlink" title="7.报错"></a>7.报错</h3><p>配置过程中Windows Terminal可能会报错：无法执行PowerShell脚本</p>
+<p>类似与于下图：</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712105337326.png" alt="image-20210712105337326"></p>
+<p>解决：</p>
+<ul>
+<li>输入命令:<code>set-executionpolicy remotesigned</code> </li>
+<li><strong>注意</strong>：要以管理员身份启动Power Shell</li>
+</ul>
+<blockquote>
+<p>这个问题是因为PowerShell的默认执行策略是不允许任何脚本运行的，可以用<code> Get-ExecutionPolicy</code>命令查询当前的执行策略</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712110135318.png" alt="image-20210712110135318"></p>
+</blockquote>
+<h3 id="8-Windows-Terminal添加git-bash集成"><a href="#8-Windows-Terminal添加git-bash集成" class="headerlink" title="8.Windows Terminal添加git bash集成"></a>8.Windows Terminal添加git bash集成</h3><p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712154956898.png" alt="image-20210712154956898"></p>
+<ol>
+<li><p>首先电脑上要有git环境，安装好git后找到git中<code>bash</code>的路径位置</p>
+<blockquote>
+<p>git安装详情参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html">Windows系统Git安装教程（详解Git安装过程）</a></p>
+</blockquote>
+</li>
+<li><p>在配置文件中添加以下内容</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  &quot;profiles&quot;: &#123;</span><br><span class="line">    ...</span><br><span class="line">    &quot;list&quot;: [</span><br><span class="line">      ...,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// 图片配置</span></span><br><span class="line">        <span class="attr">&quot;acrylicOpacity&quot;</span> : <span class="number">0.4</span>,</span><br><span class="line">        <span class="attr">&quot;useAcrylic&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">&quot;background&quot;</span> : <span class="string">&quot;#242425&quot;</span>,  <span class="comment">// 背景颜色 因为ps默认是蓝底，这个和</span></span><br><span class="line">        <span class="attr">&quot;backgroundImageStretchMode&quot;</span>: <span class="string">&quot;uniformToFill&quot;</span>, <span class="comment">// 设置伸缩模式成按比例放大</span></span><br><span class="line">        <span class="attr">&quot;backgroundImageOpacity&quot;</span> : <span class="number">0.5</span>,  <span class="comment">//透明度</span></span><br><span class="line">        fontFace&quot;:&quot;MesloLGM NF&quot;,</span><br><span class="line">        &quot;fontSize&quot;: 10,</span><br><span class="line">        &quot;historySize&quot;: 9001,</span><br><span class="line">        &quot;padding&quot;: &quot;5, 5, 20, 25&quot;,</span><br><span class="line">        &quot;colorScheme&quot;: &quot;Cobalt Neon&quot;,</span><br><span class="line">        &quot;hidden&quot;: false,</span><br><span class="line"></span><br><span class="line">        &quot;guid&quot;: &quot;&#123;c0ca213b-694e-40d5-b09a-7e019d2a0086&#125;&quot;, // 这个没有也是没关系的，这个只有设置启动默认shell时才会用到</span><br><span class="line">        &quot;name&quot;: &quot;Git Bash&quot;,</span><br><span class="line">        <span class="comment">// 调用命令</span></span><br><span class="line">        &quot;commandline&quot;: &quot;E:/09Programming/09git/Git/bin/bash.exe -li&quot;, // bash的的启动路径</span><br><span class="line">        &quot;icon&quot; : &quot;E:/09Programming/09git/Git/mingw64/share/git/git-for-windows.ico&quot;, // bash的ico图标  </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>其实主要内容就最后三句，其他的就是上面<code>Windows Terminal</code>美化的一些设置，<code>bash.exe</code>和ico图标就在git的安装路径之下</p>
+<p>guid可以通过<a target="_blank" rel="noopener" href="https://www.guidgen.com/">该网站</a>随机生成，生成后复制进去即可</p>
+</blockquote>
+<h2 id="0x03-cmd和Powershell"><a href="#0x03-cmd和Powershell" class="headerlink" title="0x03 cmd和Powershell"></a>0x03 cmd和Powershell</h2><p>这里介绍就是不使用Windows terminal，而是稍微修改一下原生的终端环境，cmd和powershell,先做点说明（以cmd为例，powershell类似）</p>
+<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><ul>
+<li><p>原来的cmd和Powershell不好看主要原因就是字体问题，其他的设置重要但不是最重要的，因此重点是选择自己觉得舒服的字体</p>
+</li>
+<li><p>当我们更改cmd.exe的设置时，会看到默认值和属性两个选项，这里简单说一下区别</p>
+<ul>
+<li><p>简单来说默认值影响新创建的任何快捷方式，属性值影响于当前会话的快捷方式，属性值的优先级高于默认值</p>
+<img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712112150510.png" alt="image-20210712112150510" style="zoom:67%;" />
+</li>
+<li><p>属性：你做的修改(比如字体、背景颜色等)会影响当前会话(准确来讲时影响从当前这个快捷方式打开的会话)，当你重新打开cmd时，如果你是从上次修改的那个会话的快捷方式打开，那么修改还会在，但从其他快捷方式打开的cmd不受影响</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712112150510.png" alt="0kka5-7wk8q"></p>
+</li>
+<li><p>默认值：更改不会影响当前会话，而是会影响所有将来其他的会话(将来是指未来创建的快捷键方式)</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712112150510.png" alt="终端默认值设置"></p>
+</li>
+</ul>
+<blockquote>
+<p>详情参考：<a target="_blank" rel="noopener" href="https://qastack.cn/superuser/520198/whats-the-difference-between-defaults-and-properties-when-changing-cmdexe-or-powershells-settings-duplicate">更改cmd.exe或PowerShell的设置时，默认值和属性之间的区别是什么</a></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-设置"><a href="#3-设置" class="headerlink" title="3.设置"></a>3.设置</h3><p>设置的话主要就是几点：字体、字体大小、字体颜色、背景颜色、窗口大小、窗口透明度</p>
+<p>需要注意的就是</p>
+<blockquote>
+<ol>
+<li><p>字体颜色和背景颜色的搭配(我看了一些颜色搭配，浅底深字什么的，这个搭配就是看个人了)</p>
+</li>
+<li><p>透明度我推荐73%、90%、100%–&gt;根据你的颜色搭配来确定</p>
+</li>
+<li><p>字体绝不能使用Console原生字体，我使用的是Microsoft.YaHei.Mono字体</p>
+<p>—<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1gO5rig5_VRVr3_UMRWTq3Q">百度网盘链接-博主自用备份</a><br>提取码：99aa </p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>cmd目前(最终)配置</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712114637530.png" alt="image-20210712114637530"></p>
+</li>
+<li><p>powershell就不贴出来了，这里主要提一下而已，因为这个具体的配置因人而异(主要是在下审美有限，只能凑合自己将就)</p>
+</li>
+<li><p>进入以下进行个人喜好配置即可</p>
+<p><img src="https://gitee.com/RemMeiko/img-bed/raw/master/BokePicture/image-20210712130530974.png" alt="image-20210712130530974"></p>
+</li>
+</ul>
+<h2 id="0x04-附录"><a href="#0x04-附录" class="headerlink" title="0x04 附录"></a>0x04 附录</h2><p><a target="_blank" rel="noopener" href="https://sspai.com/post/52907">5 个 PowerShell 主题，让你的 Windows 终端更好看</a></p>
+
     </div>
 </article>
 
@@ -383,12 +593,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/20/08%E9%9A%8F%E5%90%8E%E6%84%9F%E6%85%A8/">随手感慨</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2021/05/17/07%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E8%AF%95%E5%8D%B7%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">离散数学试卷做题记录</a>
                 </span>
             </li>
@@ -401,7 +605,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">占用位置</a>
+                    <a href="/2021/05/11/05%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE/">Windwos终端美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/05/10/04npm-node%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">node编译工具node-gyp相关错误</a>
                 </span>
             </li>
             
@@ -441,19 +651,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/10/04npm-node%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">node编译工具node-gyp相关错误</a>
+                    <a href="/2021/05/24/09%E5%AE%9E%E8%AE%ADDay01/">实训Day01</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/12/06%E5%8D%A0%E7%94%A8%E4%BD%8D%E7%BD%AE2/">占用位置</a>
+                    <a href="/2021/05/25/10%E5%AE%9E%E8%AE%ADDay02/">实训Day02</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/20/08%E9%9A%8F%E5%90%8E%E6%84%9F%E6%85%A8/">随手感慨</a>
+                    <a href="/2021/05/17/07%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E8%AF%95%E5%8D%B7%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">离散数学试卷做题记录</a>
                 </span>
             </li>
             
@@ -471,13 +681,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/05/28/13%E5%AE%9E%E8%AE%ADDay05/">实训Day05</a>
+                    <a href="/2021/07/01/14Cheverto%E5%9B%BE%E5%BA%8A/">利用Cheverto搭建图床</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/07/01/14Cheverto%E5%9B%BE%E5%BA%8A/">利用Cheverto搭建图床</a>
+                    <a href="/2021/05/28/13%E5%AE%9E%E8%AE%ADDay05/">实训Day05</a>
                 </span>
             </li>
             
@@ -510,41 +720,43 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14.174267916743062px;" class="tag-cloud-link">杂谈</a>
+    <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 11.193292960435064px;" class="tag-cloud-link">杂谈</a>
     
-    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 9.029036135687498px;" class="tag-cloud-link">碎碎念</a>
+    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 9.759960152488622px;" class="tag-cloud-link">碎碎念</a>
     
-    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 14.34148750296077px;" class="tag-cloud-link">Git 配置</a>
+    <a href="/tags/Git-%E9%85%8D%E7%BD%AE/" style="font-size: 19.4734295605463px;" class="tag-cloud-link">Git 配置</a>
     
-    <a href="/tags/Git/" style="font-size: 14.466611537944939px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 9.609657215504706px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 15.52697612822489px;" class="tag-cloud-link">命令</a>
+    <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 8.518704698472577px;" class="tag-cloud-link">命令</a>
     
-    <a href="/tags/npm/" style="font-size: 8.11209941103456px;" class="tag-cloud-link">npm</a>
+    <a href="/tags/npm/" style="font-size: 16.34692517299781px;" class="tag-cloud-link">npm</a>
     
-    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 9.389943238269982px;" class="tag-cloud-link">报错</a>
+    <a href="/tags/%E6%8A%A5%E9%94%99/" style="font-size: 9.355742428057802px;" class="tag-cloud-link">报错</a>
     
-    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 19.166186254221472px;" class="tag-cloud-link">离散数学</a>
+    <a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 13.406660841779289px;" class="tag-cloud-link">折腾</a>
     
-    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 16.997864673247754px;" class="tag-cloud-link">期末考试</a>
+    <a href="/tags/Windows-Terminal/" style="font-size: 9.017788138545463px;" class="tag-cloud-link">Windows Terminal</a>
     
-    <a href="/tags/%E4%B8%8E%E6%88%91%E6%97%A0%E5%85%B3/" style="font-size: 10.590997315108904px;" class="tag-cloud-link">与我无关</a>
+    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 10.250107773840844px;" class="tag-cloud-link">实训</a>
     
-    <a href="/tags/%E5%AE%9E%E8%AE%AD/" style="font-size: 9.700039399572688px;" class="tag-cloud-link">实训</a>
+    <a href="/tags/Zigbee/" style="font-size: 13.519202679587536px;" class="tag-cloud-link">Zigbee</a>
     
-    <a href="/tags/Zigbee/" style="font-size: 9.767083950470502px;" class="tag-cloud-link">Zigbee</a>
+    <a href="/tags/CC2530/" style="font-size: 17.51575311315979px;" class="tag-cloud-link">CC2530</a>
     
-    <a href="/tags/CC2530/" style="font-size: 14.066837075774579px;" class="tag-cloud-link">CC2530</a>
+    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 8.053560850785829px;" class="tag-cloud-link">离散数学</a>
     
-    <a href="/tags/Z-stack/" style="font-size: 11.036184631864522px;" class="tag-cloud-link">Z-stack</a>
+    <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 13.909443908599663px;" class="tag-cloud-link">期末考试</a>
     
-    <a href="/tags/UART/" style="font-size: 15.708234402447893px;" class="tag-cloud-link">UART</a>
+    <a href="/tags/Z-stack/" style="font-size: 10.858316800439729px;" class="tag-cloud-link">Z-stack</a>
     
-    <a href="/tags/Zigbee%E9%80%9A%E4%BF%A1/" style="font-size: 15.159473158606676px;" class="tag-cloud-link">Zigbee通信</a>
+    <a href="/tags/UART/" style="font-size: 15.93077552984942px;" class="tag-cloud-link">UART</a>
     
-    <a href="/tags/Cheverto/" style="font-size: 14.471291609585627px;" class="tag-cloud-link">Cheverto</a>
+    <a href="/tags/Cheverto/" style="font-size: 10.182774160163511px;" class="tag-cloud-link">Cheverto</a>
     
-    <a href="/tags/%E5%B9%BF%E5%BA%A6/" style="font-size: 17.000179991271747px;" class="tag-cloud-link">广度</a>
+    <a href="/tags/%E5%B9%BF%E5%BA%A6/" style="font-size: 8.606313053386124px;" class="tag-cloud-link">广度</a>
+    
+    <a href="/tags/Zigbee%E9%80%9A%E4%BF%A1/" style="font-size: 9.746417086068389px;" class="tag-cloud-link">Zigbee通信</a>
     
 </div>
                 
